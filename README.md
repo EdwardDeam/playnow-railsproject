@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# TODO
+* The .ruby-version file has been git ignored so that the project can run on different versions for testing

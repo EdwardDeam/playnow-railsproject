@@ -13,6 +13,8 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore Ruby version
+.ruby-version
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
