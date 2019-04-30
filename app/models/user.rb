@@ -4,7 +4,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :publisher, dependent: :destroy
-  after_initialize do
-    self.build_publisher if publisher.nil?
-  end
 end
