@@ -12,14 +12,14 @@ puts 'Creating regular users...'
 regular1 = User.create({ :email => 'user1@test.com', :username => 'Ignignokt', :first_name => 'Harry', :last_name => 'Smith', :password => 'qwert123', :password_confirmation => 'qwert123'})
 regular2 = User.create({ :email => 'user2@test.com', :username => 'Handbanana', :first_name => 'Anna', :last_name => 'Jones', :password => 'qwert123', :password_confirmation => 'qwert123'})
 regular3 = User.create({ :email => 'user3@test.com', :username => 'MasterShake', :first_name => 'John', :last_name => 'Doe', :password => 'qwert123', :password_confirmation => 'qwert123'})
-puts "User #{regular1.username} with email #{regular1.email} created!"
-puts "User #{regular2.username} with email #{regular2.email} created!"
+puts "User #{regular1.username}\t with email #{regular1.email} created!"
+puts "User #{regular2.username}\t with email #{regular2.email} created!"
 puts
-puts 'Creating publisher users'
+puts 'Creating publisher users...'
 pub1 = User.create({ :email => 'pub1@test.com', :username => 'Mitrosoft', :first_name => 'William', :last_name => 'Fence', :password => 'qwert123', :password_confirmation => 'qwert123'})
 pub2 = User.create({ :email => 'pub2@test.com', :username => 'SpaceResident', :first_name => 'Robert', :last_name => 'Chris', :password => 'qwert123', :password_confirmation => 'qwert123'})
-puts "Publisher #{pub1.username} with email #{pub1.email} created!"
-puts "Publisher #{pub2.username} with email #{pub2.email} created!"
+puts "Publisher #{pub1.username}\t with email #{pub1.email} created!"
+puts "Publisher #{pub2.username}\t with email #{pub2.email} created!"
 # Create the Publisher Objects for publisher users
 pub1_obj = Publisher.new({ description: 'What would you like to do today?' })
 pub2_obj = Publisher.new({ description: 'Comming soon...' })
@@ -29,7 +29,7 @@ pub2_obj.user_id = pub2.id
 # Save the publisher so we can add games
 pub1_obj.save
 pub2_obj.save
-
+puts
 puts 'Generating Games...'
 pub1_obj.games.create({title: 'MitroSoft Game One', genre: 'RPG', price: 1000, description: 'Description of game one'})
 pub1_obj.games.create({title: 'MitroSoft Game Two', genre: 'Strategy', price: 1560, description: 'Description of game two'})
@@ -37,7 +37,7 @@ pub1_obj.games.create({title: 'MitroSoft Game Three', genre: 'FPS', price: 3450,
 pub1_obj.games.create({title: 'MitroSoft Game Four', genre: 'RPG', price: 1000, description: 'Description of game four'})
 pub2_obj.games.create({title: 'Space Game One', genre: 'Strategy', price: 1670, description: 'Description of game two'})
 pub2_obj.games.create({title: 'Space Game Two', genre: 'Undefinable', price: 90000, description: 'The greatest game known to man'})
-puts
+
 games = Game.all
 games.each do |g|
   puts "Game #{g.title} created."
@@ -59,7 +59,7 @@ orders = [
 ]
 
 orders.each do |o|
-  puts "User #{o.user.username} Key #{o.game_key}"
+  puts "User #{o.user.username}  \tKey #{o.game_key}"
 end
 puts
 puts "Seeding Over"
