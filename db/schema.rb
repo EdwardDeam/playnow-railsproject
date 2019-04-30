@@ -10,15 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_30_022732) do
+ActiveRecord::Schema.define(version: 2019_04_30_053845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.integer "price"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "publisher_id"
+    t.index ["publisher_id"], name: "index_games_on_publisher_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "game_key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "publisher_id"
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_orders_on_game_id"
+    t.index ["publisher_id"], name: "index_orders_on_publisher_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
 
   create_table "publishers", force: :cascade do |t|
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_publishers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,11 +57,13 @@ ActiveRecord::Schema.define(version: 2019_04_30_022732) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "publisher_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["publisher_id"], name: "index_users_on_publisher_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "users", "publishers"
+  add_foreign_key "games", "publishers"
+  add_foreign_key "orders", "games"
+  add_foreign_key "orders", "publishers"
+  add_foreign_key "orders", "users"
+  add_foreign_key "publishers", "users"
 end
