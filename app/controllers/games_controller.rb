@@ -58,10 +58,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-<<<<<<< HEAD
-    params.require(:game).permit(:title, :genre, :price, :description)
-=======
-    params.permit(:title, :genre, :price, :description, images: [])
->>>>>>> bc12dafaf3042dfe424ff273bac944a45b8b80cc
+    params.require(:game).permit(:title, :genre, :price, :description, :images)
   end
 end
