@@ -4,5 +4,5 @@ class Publisher < ApplicationRecord
   has_many :orders
 
   # Allow description to be called directly from the user
-  delegate :description, to: :user
+  
 end

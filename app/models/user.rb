@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :publisher, dependent: :destroy
   has_many :orders
+  delegate :description, to: :publisher
   # validates :age_restriction
 
   # def age_restriction
