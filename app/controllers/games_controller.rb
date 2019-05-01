@@ -1,8 +1,7 @@
 class GamesController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:new, :create]
   def show
-    # @book = Book.find(params[:id])
-    # @review = Review.new
-
     @game = Game.find(params[:id])
   end
 end
