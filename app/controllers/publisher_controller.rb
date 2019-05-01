@@ -1,2 +1,0 @@
-class PublisherController < ApplicationController
-end
