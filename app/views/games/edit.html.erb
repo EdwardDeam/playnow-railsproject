@@ -1,21 +1,19 @@
 <h1>Edit your Game Brah!</h1>
 
-<form action='<%= games_path %>' method='POST'>
-<input type='hidden' value='<%= form_authenticity_token %>' name='authenticity_token' />
+<%= form_for @game do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
 
-<label>Title</label>
-<input type='text' name='title' />
+<%= f.label :genre %>
+<%= f.text_field :genre %>
 
-<label>Genre</label>
-<input type='text' name='genre' />
+<%= f.label :price %>
+<%= f.number_field :price %>
 
-<label>Price</label>
-<input type='number' name='price' />
+<%= f.label :descripion %>
+<%= f.text_area :description %>
 
-<label>Description</label>
-<input type='textarea' name='description' />
+<%= f.submit "UPDATE" %>
+<% end %>
 
-<input type='submit' value='Edit' />
-
-</form>
 <%= link_to 'Home', :root %>
