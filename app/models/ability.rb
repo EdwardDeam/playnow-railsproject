@@ -10,7 +10,8 @@ class Ability
       puts "USER IS PUBLISHER"
       puts "*"*20
       can :read, :all
-      can :update, Game, :owner => user.id
+      can :create, Game
+      can [:update, :delete], Game, owner: user.id
     else
       can :read, :all
     end
