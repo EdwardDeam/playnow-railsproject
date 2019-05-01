@@ -5,4 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :publisher, dependent: :destroy
   has_many :orders
+  # validates :age_restriction
+
+  # def age_restriction
+  #   if (birth_date.to_date + 13.years) < Date.strptime
+  #     errors.add :birth_date, 'Sorry but you need to be over 13 to agree to the Terms & Conditions'
+  #   end
+  # end
 end

@@ -1,0 +1,47 @@
+// the reason there are multiple functions here is because i couldnt override bootstrap
+.navbar_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #1F0B33;
+  height: 50px;
+}
+.main a {
+  display: inline-block;
+  width: 70px;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+  border: 1px #40F99B solid;
+  color: #40F99B;
+  background: #473456;
+  padding: 6px 6px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+.main {
+  list-style: none;
+}
+.main a:hover {
+  color: #1F0B33;
+  background: #BFFFC5;
+}
+.secondary a {
+  display: inline-block;
+  width: 70px;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+  border: 1px #40F99B solid;
+  color: #40F99B;
+  padding: 6px 6px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+.secondary a:hover {
+  color: #1F0B33;
+  background: #BFFFC5;
+}
+.secondary {
+  list-style: none;
+}
