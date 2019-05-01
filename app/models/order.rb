@@ -6,12 +6,14 @@ class Order < ApplicationRecord
   # Callback to add a game key to the order
   after_create :generate_key
 
+
   private
   def generate_key
-    # Array of random chars
+    # Array of characters to sample
     chars = [*'A'..'Z', *'0'..'9']
     key = ''
     20.times do |i|
+      # put a dash every 5 characters except the first one
       key += '-' if i % 5 == 0 && i != 0
       key += chars.sample
     end
