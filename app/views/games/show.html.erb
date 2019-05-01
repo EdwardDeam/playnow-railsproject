@@ -4,5 +4,5 @@
 <p>Description: <%= @game.description %></p>
 <p>Publisher: <%= @game.publisher.user.username %></p>
 <% if can? :update, @game %>
-<p>Only Publishers should see this</p>
+<p>Only Owner should see this</p>
 <% end  %>
