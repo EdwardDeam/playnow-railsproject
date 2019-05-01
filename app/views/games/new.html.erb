@@ -19,5 +19,25 @@
 <input type="file" name="images[]" accept="image/png, image/jpg" multiple>
 
 <input type='submit' value='Publish Now!' />
-
 </form>
+
+<div class='new_edit_form'>
+  <%= form_for @game do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
+  <%= f.label :descripion %>
+  <%= f.text_area :description %>
+
+  <%= f.label :images %>
+  <%= f.file_field :images, multiple: true, accept: 'image/jpg, image/png' %>
+
+  <%= f.submit "Publish Now!" %>
+  <% end %>
+</div>

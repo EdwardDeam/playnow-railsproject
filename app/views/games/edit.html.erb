@@ -1,19 +1,20 @@
-<h1>Edit your Game Brah!</h1>
+<div class='new_edit_form'>
+  <h1>Edit your Game Brah!</h1>
+  <%= form_for @game do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-<%= form_for @game do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
 
-<%= f.label :genre %>
-<%= f.text_field :genre %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
 
-<%= f.label :price %>
-<%= f.number_field :price %>
+  <%= f.label :descripion %>
+  <%= f.text_area :description %>
 
-<%= f.label :descripion %>
-<%= f.text_area :description %>
+  <%= f.submit "UPDATE" %>
+  <% end %>
 
-<%= f.submit "UPDATE" %>
-<% end %>
-
-<%= link_to 'Home', :root %>
+  <%= link_to 'Home', :root %>
+</div>
