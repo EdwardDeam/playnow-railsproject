@@ -9,6 +9,8 @@
 
 # ignore ruby version
 .ruby-version
+
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -29,3 +31,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+#ignore credentials
+/config/credentials.yml
