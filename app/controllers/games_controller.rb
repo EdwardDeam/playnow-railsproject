@@ -23,7 +23,7 @@ class GamesController < ApplicationController
       # TODO: Throw error Letting user know that they need the be a publisher to publish a a game
       #       May be able to avoid this with blocking the page to users who arent publishers
       @publisher = current_user.publisher
-      @game = @publisher.games.create(game_params)
+      @game = @publisher.games.new(game_params)
       @game.save
       redirect_to game_path(@game)
     end
@@ -58,6 +58,10 @@ class GamesController < ApplicationController
   private
 
   def game_params
+<<<<<<< HEAD
     params.require(:game).permit(:title, :genre, :price, :description)
+=======
+    params.permit(:title, :genre, :price, :description, images: [])
+>>>>>>> bc12dafaf3042dfe424ff273bac944a45b8b80cc
   end
 end
