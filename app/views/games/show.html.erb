@@ -1,11 +1,23 @@
 <%= render 'shared/banneradd' %>
 
-<h1><%= @game.title %></h1>
-<p>Price $<%= (@game.price)%></p>
-<p>Genre: <%= @game.genre %></p>
-<p>Description: <%= @game.description %></p>
-<p>Publisher: <%= @game.publisher.user.username %></p>
-<% if can? :update, @game %>
-<p>Only Owner should see this</p>
-<% end  %>
-<%= render "shared/stripe_form" %>
+<%# <div class='game_page_container'> %>
+  <div class='game_container'>
+    <div class='image_box_one'>Game Image 1
+    </div>
+    <div class='image_box_two'>Game Image 2
+    </div>
+    <div class='image_box_three'>Game Image 3
+    </div>
+    <div class='bio_box'>
+      <h1><%= @game.title %></h1>
+      <p>Price $<%= (@game.price)%></p>
+      <p>Genre: <%= @game.genre %></p>
+      <p>Description: <%= @game.description %></p>
+      <p>Publisher: <%= @game.publisher.user.username %></p>
+      <% if can? :update, @game %>
+      <p>Only Owner should see this</p>
+      <% end  %>
+      <%= render "shared/stripe_form" %>
+    </div>
+  </div>  
+<%# </div>  %>

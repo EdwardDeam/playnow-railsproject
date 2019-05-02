@@ -1,0 +1,44 @@
+// .game_page_container {
+//   display: flex;
+//   height: 100%;
+//   width: 100%;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.game_container {
+  display: grid;
+  width: 90vw;
+  height: 450px;
+  // border: 1px black solid;
+  grid-template-rows: 1fr 10px 1fr 10px 1fr;
+  grid-template-columns: 400px 50px 1fr ;
+}
+.image_box_one {
+  border: 1px yellow solid;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.image_box_two {
+  border: 1px green solid;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.image_box_three {
+  border: 1px pink solid;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.bio_box {
+  border: 1px pink solid;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
