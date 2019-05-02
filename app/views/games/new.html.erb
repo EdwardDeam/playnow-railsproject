@@ -1,26 +1,5 @@
 <h1>Publish a New Game Brah!</h1>
 
-<form action='<%= games_path %>' method='POST' enctype="multipart/form-data">
-<input type='hidden' value='<%= form_authenticity_token %>' name='authenticity_token' />
-
-<label>Title</label>
-<input type='text' name='title' />
-
-<label>Genre</label>
-<input type='text' name='genre' />
-
-<label>Price</label>
-<input type='number' name='price' />
-
-<label>Description</label>
-<input type='textarea' name='description' />
-
-<label>Game Image Upload</label>
-<input type="file" name="images[]" accept="image/png, image/jpg" multiple>
-
-<input type='submit' value='Publish Now!' />
-</form>
-
 <div class='new_edit_form'>
   <%= form_for @game do |f| %>
   <%= f.label :title %>

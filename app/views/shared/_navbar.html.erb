@@ -1,0 +1,18 @@
+<div class="navbar_container">
+      <ul>
+        <li class="main"><%= link_to 'Home', root_path %></li>
+      </ul>
+      <ul class="navbar_container">
+      <% if user_signed_in? %>
+        <li class="secondary" ><%= link_to 'Profile', edit_user_registration_path %></li>
+        <li class="secondary" ><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      <% if can? :create, Game %>
+        <li class="secondary" ><%= link_to 'Publish', new_game_path %></li>
+      <% end %>
+        <%# link the Publish path  %>
+      <% else %>
+        <li class="secondary"><%= link_to 'Log In', new_user_session_path %></li>
+        <li class="secondary"><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <% end %>
+      </ul>
+  </div>
