@@ -64,7 +64,7 @@ Rails.application.configure do
     port:                 587,
     domain:               "sandbox1d61efd43ffc4cfa80d6d4417a638e45.mailgun.org",
     user_name:            "postmaster@sandbox1d61efd43ffc4cfa80d6d4417a638e45.mailgun.org",
-    password:             "5c45e90feb602a9c4466f8bf082b2de-dc5f81da-78182402",
+    password:             "c5c45e90feb602a9c4466f8bf082b2de-dc5f81da-78182402",
     authentication:       "plain",
     enable_starttls_auto: true }
 end
