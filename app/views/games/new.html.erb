@@ -9,7 +9,7 @@
   <%= f.text_field :genre %>
 
   <%= f.label :price %>
-  <%= f.number_field :price %>
+  <%= f.number_field :price, step: 0.01 %>
 
   <%= f.label :descripion %>
   <%= f.text_area :description %>

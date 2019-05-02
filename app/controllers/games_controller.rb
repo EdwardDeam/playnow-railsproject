@@ -34,21 +34,16 @@ class GamesController < ApplicationController
 
   def edit
     @game = Game.find(params[:id])
-
   end
 
   def update
-    puts "*"*20
-    puts 'PARAMS UPDATE'
-    puts params
-    puts "*"*20
     @game = Game.find(params[:id])
     if @game.update(game_params)
       redirect_to @game
     else
       render :edit
     end
-    
+
   end
 
   def destroy
@@ -61,7 +56,18 @@ class GamesController < ApplicationController
   private
 
   def game_params
+    sanitize_price
     params.require(:game).permit(:title, :genre, :price, :description, :images)
+  end
 
+  def price_from_decimal(decimal_price)
+    decimal_price = decimal_price.to_f
+    (decimal_price * 100).to_i
+  end
+
+  def sanitize_price
+    if params[:game][:price].class != Integer
+      return params[:game][:price] = price_from_decimal(params[:game][:price])
+    end
   end
 end
