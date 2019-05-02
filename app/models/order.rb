@@ -4,7 +4,7 @@ class Order < ApplicationRecord
   belongs_to :publisher
 
   # Callback to add a game key to the order
-  after_create :generate_key
+  before_create :generate_key
 
 
   private
