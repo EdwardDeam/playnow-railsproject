@@ -45,17 +45,17 @@ end
 puts
 puts 'Generating orders...'
 orders = [
-  Order.create({user: regular1, publisher: pub1_obj, game: pub1_obj.games.first, game_key: 'AAAAAAAAA'}),
-  Order.create({user: regular2, publisher: pub1_obj, game: pub1_obj.games.last, game_key: 'BBBBBBBBB'}),
-  Order.create({user: regular3, publisher: pub1_obj, game: pub2_obj.games.first, game_key: 'CCCCCCCCC'}),
-  Order.create({user: regular1, publisher: pub2_obj, game: pub1_obj.games.first, game_key: 'DDDDDDDDD'}),
-  Order.create({user: regular2, publisher: pub2_obj, game: pub2_obj.games.last, game_key: 'EEEEEEEEE'}),
-  Order.create({user: regular3, publisher: pub1_obj, game: pub2_obj.games.last, game_key: 'FFFFFFFFF'}),
-  Order.create({user: regular3, publisher: pub2_obj, game: pub2_obj.games.last, game_key: 'IIIIIIIII'}),
-  Order.create({user: regular2, publisher: pub2_obj, game: pub1_obj.games.first, game_key: 'JJJJJJJJJ'}),
-  Order.create({user: regular1, publisher: pub1_obj, game: pub2_obj.games.last, game_key: 'KKKKKKKKK'}),
-  Order.create({user: pub1, publisher: pub2_obj, game: pub1_obj.games.first, game_key: 'GGGGGGGGG'}),
-  Order.create({user: pub1, publisher: pub2_obj, game: pub1_obj.games.last, game_key: 'HHHHHHHHH'})
+  Order.create({user: regular1, publisher: pub1_obj, game: pub1_obj.games.first }),
+  Order.create({user: regular2, publisher: pub1_obj, game: pub1_obj.games.last }),
+  Order.create({user: regular3, publisher: pub1_obj, game: pub2_obj.games.first}),
+  Order.create({user: regular1, publisher: pub2_obj, game: pub1_obj.games.first}),
+  Order.create({user: regular2, publisher: pub2_obj, game: pub2_obj.games.last }),
+  Order.create({user: regular3, publisher: pub1_obj, game: pub2_obj.games.last }),
+  Order.create({user: regular3, publisher: pub2_obj, game: pub2_obj.games.last }),
+  Order.create({user: regular2, publisher: pub2_obj, game: pub1_obj.games.first }),
+  Order.create({user: regular1, publisher: pub1_obj, game: pub2_obj.games.last }),
+  Order.create({user: pub1, publisher: pub2_obj, game: pub1_obj.games.first }),
+  Order.create({user: pub1, publisher: pub2_obj, game: pub1_obj.games.last })
 ]
 
 orders.each do |o|
