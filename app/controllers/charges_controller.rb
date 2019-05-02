@@ -3,8 +3,7 @@ class ChargesController < ApplicationController
   end
   
   def create
-    # Amount in cents
-    @amount = 500
+    @game = Game.find(params[:game_id])
 
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -13,7 +12,7 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create({
       customer: customer.id,
-      amount: @amount,
+      amount: @game.price,
       description: 'Rails Stripe customer',
       currency: 'usd',
     })
