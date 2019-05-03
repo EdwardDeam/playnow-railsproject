@@ -5,12 +5,9 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    if user.publisher
-      puts "*"*20
-      puts "USER IS PUBLISHER"
-      puts "*"*20
+    if user.seller?
       can :read, :all
-      can :create, Game
+      can [:create, :read], Game
       can [:update, :delete], Game, owner: user.id
     else
       can :read, :all
