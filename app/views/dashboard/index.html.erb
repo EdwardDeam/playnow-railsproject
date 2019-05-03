@@ -1,0 +1,5 @@
+<% @games.length.times do |i| %>
+  <h1><%= @games.game_title(i) %></h1>
+  <h2><%= @games.game_publisher(i) %></h2>
+  <h3><%= @games.game_key(i) %></h3>
+<% end %>

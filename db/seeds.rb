@@ -9,15 +9,15 @@
 puts "Start of Seeding"
 puts
 puts 'Creating regular users...'
-regular1 = User.create({ :email => 'user1@test.com', :username => 'Ignignokt', :first_name => 'Harry', :last_name => 'Smith', :password => 'qwert123', :password_confirmation => 'qwert123'})
-regular2 = User.create({ :email => 'user2@test.com', :username => 'Handbanana', :first_name => 'Anna', :last_name => 'Jones', :password => 'qwert123', :password_confirmation => 'qwert123'})
-regular3 = User.create({ :email => 'user3@test.com', :username => 'MasterShake', :first_name => 'John', :last_name => 'Doe', :password => 'qwert123', :password_confirmation => 'qwert123'})
+regular1 = User.create({ :email => 'user1@test.com', :username => 'Ignignokt', :first_name => 'Harry', :last_name => 'Smith', :password => 'qwert123', :password_confirmation => 'qwert123', :seller => false})
+regular2 = User.create({ :email => 'user2@test.com', :username => 'Handbanana', :first_name => 'Anna', :last_name => 'Jones', :password => 'qwert123', :password_confirmation => 'qwert123', :seller => false})
+regular3 = User.create({ :email => 'user3@test.com', :username => 'MasterShake', :first_name => 'John', :last_name => 'Doe', :password => 'qwert123', :password_confirmation => 'qwert123', :seller => false})
 puts "User #{regular1.username}\t with email #{regular1.email} created!"
 puts "User #{regular2.username}\t with email #{regular2.email} created!"
 puts
 puts 'Creating publisher users...'
-pub1 = User.create({ :email => 'pub1@test.com', :username => 'Mitrosoft', :first_name => 'William', :last_name => 'Fence', :password => 'qwert123', :password_confirmation => 'qwert123'})
-pub2 = User.create({ :email => 'pub2@test.com', :username => 'SpaceResident', :first_name => 'Robert', :last_name => 'Chris', :password => 'qwert123', :password_confirmation => 'qwert123'})
+pub1 = User.create({ :email => 'pub1@test.com', :username => 'Mitrosoft', :first_name => 'William', :last_name => 'Fence', :password => 'qwert123', :password_confirmation => 'qwert123', :seller => true})
+pub2 = User.create({ :email => 'pub2@test.com', :username => 'SpaceResident', :first_name => 'Robert', :last_name => 'Chris', :password => 'qwert123', :password_confirmation => 'qwert123', :seller => true})
 puts "Publisher #{pub1.username}\t with email #{pub1.email} created!"
 puts "Publisher #{pub2.username}\t with email #{pub2.email} created!"
 # Create the Publisher Objects for publisher users
@@ -45,17 +45,17 @@ end
 puts
 puts 'Generating orders...'
 orders = [
-  Order.create({user: regular1, publisher: pub1_obj, game: pub1_obj.games.first, game_key: 'AAAAAAAAA'}),
-  Order.create({user: regular2, publisher: pub1_obj, game: pub1_obj.games.last, game_key: 'BBBBBBBBB'}),
-  Order.create({user: regular3, publisher: pub1_obj, game: pub2_obj.games.first, game_key: 'CCCCCCCCC'}),
-  Order.create({user: regular1, publisher: pub2_obj, game: pub1_obj.games.first, game_key: 'DDDDDDDDD'}),
-  Order.create({user: regular2, publisher: pub2_obj, game: pub2_obj.games.last, game_key: 'EEEEEEEEE'}),
-  Order.create({user: regular3, publisher: pub1_obj, game: pub2_obj.games.last, game_key: 'FFFFFFFFF'}),
-  Order.create({user: regular3, publisher: pub2_obj, game: pub2_obj.games.last, game_key: 'IIIIIIIII'}),
-  Order.create({user: regular2, publisher: pub2_obj, game: pub1_obj.games.first, game_key: 'JJJJJJJJJ'}),
-  Order.create({user: regular1, publisher: pub1_obj, game: pub2_obj.games.last, game_key: 'KKKKKKKKK'}),
-  Order.create({user: pub1, publisher: pub2_obj, game: pub1_obj.games.first, game_key: 'GGGGGGGGG'}),
-  Order.create({user: pub1, publisher: pub2_obj, game: pub1_obj.games.last, game_key: 'HHHHHHHHH'})
+  Order.create({user: regular1, publisher: pub1_obj, game: pub1_obj.games.first }),
+  Order.create({user: regular2, publisher: pub1_obj, game: pub1_obj.games.last }),
+  Order.create({user: regular3, publisher: pub1_obj, game: pub2_obj.games.first}),
+  Order.create({user: regular1, publisher: pub2_obj, game: pub1_obj.games.first}),
+  Order.create({user: regular2, publisher: pub2_obj, game: pub2_obj.games.last }),
+  Order.create({user: regular3, publisher: pub1_obj, game: pub2_obj.games.last }),
+  Order.create({user: regular3, publisher: pub2_obj, game: pub2_obj.games.last }),
+  Order.create({user: regular2, publisher: pub2_obj, game: pub1_obj.games.first }),
+  Order.create({user: regular1, publisher: pub1_obj, game: pub2_obj.games.last }),
+  Order.create({user: pub1, publisher: pub2_obj, game: pub1_obj.games.first }),
+  Order.create({user: pub1, publisher: pub2_obj, game: pub1_obj.games.last })
 ]
 
 orders.each do |o|

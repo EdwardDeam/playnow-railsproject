@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
       currency: 'usd',
     })
 
-    order = Order.create({user: current_user, publisher: @game.publisher, game: @game, game_key: ''})
+  order = Order.create({user: current_user, publisher: @game.publisher, game: @game })
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
