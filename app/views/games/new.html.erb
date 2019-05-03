@@ -1,22 +1,30 @@
-<h1>Publish a New Game Brah!</h1>
-
-<div class='new_edit_form'>
+<div class='signup-container'>
+<h1 class='registration_headings'>Publish a New Game Brah!</h1>
   <%= form_for @game do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :genre %>
-  <%= f.text_field :genre %>
-
-  <%= f.label :price %>
-  <%= f.number_field :price, step: 0.01 %>
-
-  <%= f.label :descripion %>
-  <%= f.text_area :description %>
-
-  <%= f.label :images %>
-  <%= f.file_field :images, multiple: true, accept: 'image/jpg, image/png' %>
-
-  <%= f.submit "Publish Now!" %>
+  <div class='field'>
+    <%= f.text_field :title, placeholder: "Game Title" %>
+  </div>
+  <br>
+  <div class='field'>
+    <%= f.text_field :genre, placeholder: "Genre" %>
+  </div>
+  <br>
+  <div class='field'>
+    <%= f.number_field :price, step: 0.01, placeholder: "Price" %>
+  </div>
+  <br>
+  <div class='field'>
+    <%= f.text_area :description, placeholder: "Description of Game" %>
+  </div>
+  <br>
+  <div class='button_spacing'>
+    <label class='custom_submit'>
+      Upload Images
+      <span style="display:none;">
+      <%= f.file_field :images, class: "custom_submit", multiple: true, accept: 'image/jpg, image/png' %>
+      </span>
+    </label>
+      <%= f.submit "Publish Now!", class: 'custom_submit' %>
+  </div>
   <% end %>
 </div>

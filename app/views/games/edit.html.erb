@@ -1,20 +1,26 @@
-<div class='new_edit_form'>
-  <h1>Edit your Game Brah!</h1>
+<div class='signup-container'>
+  <h1 class='registration_headings'>Edit your Game Brah!</h1>
   <%= form_for @game do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
 
-  <%= f.label :genre %>
-  <%= f.text_field :genre %>
-
-  <%= f.label :price %>
-  <%= f.number_field :price, step: 0.01 %>
-
-  <%= f.label :descripion %>
-  <%= f.text_area :description %>
-
-  <%= f.submit "UPDATE" %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <br>
+  <div class='field'>
+  <%= f.text_field :genre, placeholdar: 'Genre' %>
+  </div>
+  <br>
+  <div class='field'>
+  <%= f.number_field :price, placeholder: 'Price', step: 0.01 %>
+  </div>
+  <br>
+  <div class='field'>
+  <%= f.text_area :description, placeholder: 'Description' %>
+  </div>
+  <br>
+  <div class='button_spacing'>
+  <%= f.submit "UPDATE", class: 'custom_submit' %>
+  </div>
   <% end %>
 
-  <%= link_to 'Home', :root %>
 </div>
