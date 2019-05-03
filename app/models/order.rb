@@ -6,7 +6,6 @@ class Order < ApplicationRecord
   # Callback to add a game key to the order
   before_create :generate_key
 
-
   private
   def generate_key
     # Array of characters to sample
