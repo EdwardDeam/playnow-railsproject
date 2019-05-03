@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 * {
   margin: 0;
+  font-family: 'Libre Franklin', sans-serif;
 }
 body {
   display: flex;
@@ -11,4 +12,7 @@ body {
   flex-direction: column;
   background: #1F0B33;
   color: aliceblue;
+}
+.registration_headings {
+  padding: 20px;
 }
