@@ -1,4 +1,4 @@
-require_relative '../../../bin/debug.rb'
+
 class DashboardController
   # Used for storing and sorting a list of user specific Game objects for display
   # on the dashboard page
