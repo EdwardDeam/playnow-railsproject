@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
+    # Recomended devise way to allow extra prams at user sign up.
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :seller])
   end
 end
