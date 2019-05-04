@@ -1,11 +1,10 @@
-
 class DashboardController
-  # Used for storing and sorting a list of user specific Game objects for display
-  # on the dashboard page
+  # Used for storing and sorting a list of user specific Game objects for
+  # display on the dashboard page
   class GameList
     attr_accessor :all, :length
     def initialize(current_user)
-      @all = build_all(current_user)
+      @all = build_list(current_user)
       @length = @all.length
     end
 
@@ -23,7 +22,7 @@ class DashboardController
 
     private
 
-    def build_all(user)
+    def build_list(user)
       games = []
       user.orders.includes(:game, publisher: [:user]).each do |o|
         games << {
@@ -34,6 +33,5 @@ class DashboardController
       end
       return games
     end
-
   end
 end
