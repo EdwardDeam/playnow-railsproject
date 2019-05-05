@@ -6,14 +6,15 @@ class Ability
   def initialize(user)
     user ||= User.new
     if user.seller?
-      can :read, :all
       # Only sellers can add games to the platform
       can [:create, :read], Game
       # Sellers can onyl edit and destroy games they created
       can [:update, :delete], Game, owner: user.id
     else
-      can :read, :all
+      can :read, Game
     end
+    can :manage, CartItem, owner: user.id
+    can :read, Cart, owner: user.id
   end
     # Define abilities for the passed in user here. For example:
     #
