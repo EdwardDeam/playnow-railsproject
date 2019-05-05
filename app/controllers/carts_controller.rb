@@ -1,13 +1,13 @@
 class CartsController < ApplicationController
   def index
-    @cart_id = current_user.cart.id
-    @cart_items = CartItem.find(cart_id: cart_id)
+    # TODO: Build a function to eager laod these
+    @cart_items = current_user.cart.cart_items
+    Debug.console(@cart_items.class.to_s)
+    Debug.console(@cart_items[0].class.to_s)
   end
 
   def new
-    puts params
-    Debug.console(params.to_s)
-    # raise
+    # Add a check so this page cant just be loaded
     CartItem.create(cart: current_user.cart, game_id: cart_params[:game_id])
   end
 
@@ -16,7 +16,6 @@ class CartsController < ApplicationController
     # Debug.console(params.to_s)
 
     # CartItem.create(cart: current_user.cart, game: params[:game])
-    
   end
 
   private
