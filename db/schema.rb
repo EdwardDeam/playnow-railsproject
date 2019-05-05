@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_235317) do
+ActiveRecord::Schema.define(version: 2019_05_05_115143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 2019_05_02_235317) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "games_id"
+    t.index ["games_id"], name: "index_cart_items_on_games_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "cart_items_id"
+    t.index ["cart_items_id"], name: "index_carts_on_cart_items_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -79,14 +93,19 @@ ActiveRecord::Schema.define(version: 2019_05_02_235317) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "seller"
+    t.bigint "carts_id"
+    t.index ["carts_id"], name: "index_users_on_carts_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cart_items", "games", column: "games_id"
+  add_foreign_key "carts", "cart_items", column: "cart_items_id"
   add_foreign_key "games", "publishers"
   add_foreign_key "orders", "games"
   add_foreign_key "orders", "publishers"
   add_foreign_key "orders", "users"
   add_foreign_key "publishers", "users"
+  add_foreign_key "users", "carts", column: "carts_id"
 end

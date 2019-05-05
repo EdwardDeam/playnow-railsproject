@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :publisher, dependent: :destroy
+  has_one :cart, dependent: :destroy
   has_many :orders
   # Allow description to be called directly from the user
   delegate :description, to: :publisher
