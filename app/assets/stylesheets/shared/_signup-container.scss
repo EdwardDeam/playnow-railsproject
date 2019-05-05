@@ -10,6 +10,7 @@
   flex-direction: column;
   width: 80vw;
   font-family: 'Libre Franklin', sans-serif;
+  margin: 15px 0;
 }
 #user_first_name {
   padding-left: 3px;
@@ -41,6 +42,13 @@
   color: #40F99B;
 }
 #user_password {
+  padding-left: 3px;
+  height: 30px;
+  background: #1F0B33;
+  border: 1px #40F99B solid;
+  color: #40F99B;
+}
+#user_current_password {
   padding-left: 3px;
   height: 30px;
   background: #1F0B33;
@@ -89,22 +97,35 @@
   justify-content: space-evenly;
 }
 .custom_submit {
-  display: inline-block;
   width: 150px;
   text-decoration: none;
   text-align: center;
-  font-family: 'Libre Franklin', sans-serif;
   font-size: 15px;
   border: 1px #40F99B solid;
   color: #40F99B;
   background: #473456;
   padding: 6px 6px;
-  margin-right: 10px;
   transition: 0.5s;
   list-style: none;
 }
 
 .custom_submit:hover {
+  color: #1F0B33;
+  background: #BFFFC5;
+}
+.button_to {
+  width: 150px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  border: 1px #40F99B solid;
+  color: #40F99B;
+  background: #473456;
+  padding: 6px 6px;
+  transition: 0.5s;
+  list-style: none;
+}
+.button_to:hover {
   color: #1F0B33;
   background: #BFFFC5;
 }

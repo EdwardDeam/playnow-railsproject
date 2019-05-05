@@ -6,45 +6,44 @@
     <div class="field">
       <%= f.text_field :first_name, placeholder: "First Name", autofocus: true, autocomplete: "first-name" %>
     </div>
-    <br>
+
     <div class="field">
       <%= f.text_field :last_name, placeholder: "Last Name", autofocus: true, autocomplete: "last-name" %>
     </div>
-    <br>
+
     <div class="field">
       <%= f.text_field :username, placeholder: "Username", autofocus: true, autocomplete: "username" %>
     </div>
-    <br>
+
     <div class="field">
       <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
     </div>
-    <br>
+
     <div class="checkbox">
        Are you over the Age of 13? <input class='' type="checkbox" required name="age">
     </div>
-    <br>
+
     <div class="checkbox">
        Do you agree to our <u>Terms & Conditions</u> <input type="checkbox" required name="terms">
     </div>
-    <br>
+ 
     <div class="checkbox">
-       Do you want to publish games?<input type="checkbox" name="publish">
+    Do you want to publish games?
+    <%= f.check_box :seller %>
     </div>
 
-    <br>
     <div class="field">
       <% if @minimum_password_length %>
       <% end %><br />
       <%= f.password_field :password, placeholder: "Password - 6 Characters Minimum", autocomplete: "new-password" %>
     </div>
-    <br>
-    <div class="field">
 
+    <div class="field">
       <%= f.password_field :password_confirmation, placeholder: "Re-Enter Password", autocomplete: "new-password" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up" %>
+    <div class='button_spacing'>
+      <%= f.submit "Sign up", class: 'custom_submit' %>
     </div>
   <% end %>
 </div>

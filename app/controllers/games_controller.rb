@@ -10,24 +10,20 @@ class GamesController < ApplicationController
   end
 
   def new
-    # Check that the registered user is a publisher
     unless current_user.publisher.nil?
-      # TODO: Throw error Letting user know that they need the be a publisher to publish a a game
-      #       May be able to avoid this with blocking the page to users who arent publishers
       @game = Game.new
     end
   end
 
   def create
     unless current_user.publisher.nil?
-      # TODO: Throw error Letting user know that they need the be a publisher to publish a a game
-      #       May be able to avoid this with blocking the page to users who arent publishers
       @publisher = current_user.publisher
       @game = @publisher.games.new(game_params)
       @game.save
 
-      @user = current_user
-      KeyMailer.with(user: @user).new_key_email.deliver_now
+      # TODO: New_Key_Email?? This function is for the creation of a game
+      #       Should this be a different template??
+      KeyMailer.with(user: current_user).new_key_email.deliver_now
       redirect_to game_path(@game)
     end
   end
@@ -47,7 +43,6 @@ class GamesController < ApplicationController
 
   def destroy
     @game = Game.find(params[:id])
-    # binding.pry
     @game.destroy
     redirect_to root_path
   end
@@ -60,13 +55,15 @@ class GamesController < ApplicationController
   end
 
   def price_from_decimal(decimal_price)
-    decimal_price = decimal_price.to_f
-    (decimal_price * 100).to_i
+    # decimal_price will most likely be a string
+    (decimal_price.to_f * 100.0).to_i
   end
 
   def sanitize_price
+    # If the price being passed in is a demimal or float, convert it to a whole number.
+    # Prices are stored in cents in the database.
     if params[:game][:price].class != Integer
-      return params[:game][:price] = price_from_decimal(params[:game][:price])
+      params[:game][:price] = price_from_decimal(params[:game][:price])
     end
   end
 end

@@ -6,7 +6,9 @@ class User < ApplicationRecord
   has_one :publisher, dependent: :destroy
   has_one :cart, dependent: :destroy
   has_many :orders
+  # Allow description to be called directly from the user
   delegate :description, to: :publisher
+<<<<<<< HEAD
 
    # Attach a publisher object if the user is a seller
    after_create :create_publisher, if: :seller, on: :create
@@ -14,10 +16,18 @@ class User < ApplicationRecord
    after_create :create_cart, on: :create
   # validates :age_restriction
 
+=======
+  # Attach a publisher object if the user is a seller
+  after_create :create_publisher, if: :seller
+
+  private
+
+>>>>>>> 387549926431243122e77ee085768b7077de8034
   def create_publisher
     pub = Publisher.new(description: 'Your description goes here!', user: self)
     pub.save
   end
+<<<<<<< HEAD
 
    def create_cart
     cart = Cart.new(user: self)
@@ -29,4 +39,6 @@ class User < ApplicationRecord
   #     errors.add :birth_date, 'Sorry but you need to be over 13 to agree to the Terms & Conditions'
   #   end
   # end
+=======
+>>>>>>> 387549926431243122e77ee085768b7077de8034
 end

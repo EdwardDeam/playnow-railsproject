@@ -9,6 +9,8 @@ class Game < ApplicationRecord
     publisher.user.id
   end
 
+  # TODO: Check if these make one or two calls to the database
+  #       Might be better to keep this in a controller or PORO
   def price_to_decimal
     price / 100.0
   end
