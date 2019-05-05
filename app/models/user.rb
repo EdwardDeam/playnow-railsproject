@@ -7,7 +7,22 @@ class User < ApplicationRecord
   has_one :cart, dependent: :destroy
   has_many :orders
   delegate :description, to: :publisher
+
+   # Attach a publisher object if the user is a seller
+   after_create :create_publisher, if: :seller, on: :create
+   # Give every user an order cart
+   after_create :create_cart, on: :create
   # validates :age_restriction
+
+  def create_publisher
+    pub = Publisher.new(description: 'Your description goes here!', user: self)
+    pub.save
+  end
+
+   def create_cart
+    cart = Cart.new(user: self)
+    cart.save
+  end
 
   # def age_restriction
   #   if (birth_date.to_date + 13.years) < Date.strptime
