@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   belongs_to :publisher
+  belongs_to :cart_items
   has_many :orders
   has_many_attached :images
 

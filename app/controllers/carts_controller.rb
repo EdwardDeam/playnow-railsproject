@@ -1,9 +1,7 @@
 class CartsController < ApplicationController
   def index
     # TODO: Build a function to eager laod these
-    @cart_items = current_user.cart.cart_items
-    Debug.console(@cart_items.class.to_s)
-    Debug.console(@cart_items[0].class.to_s)
+    @cart_items = load_cart
   end
 
   def new
@@ -19,11 +17,12 @@ class CartsController < ApplicationController
   end
 
   private
+
   def cart_params
     params.permit(:game_id)
   end
-  # def game_params
-  #   params.require(:game)
-  #   # .permit(:title, :genre, :price, :description, :images)
-  # end
+
+  def load_cart
+    current_user.cart.cart_items.includes(:game)
+  end
 end
