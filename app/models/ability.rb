@@ -7,7 +7,9 @@ class Ability
     user ||= User.new
     if user.seller?
       can :read, :all
+      # Only sellers can add games to the platform
       can [:create, :read], Game
+      # Sellers can onyl edit and destroy games they created
       can [:update, :delete], Game, owner: user.id
     else
       can :read, :all
