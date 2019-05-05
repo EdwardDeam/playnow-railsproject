@@ -18,7 +18,7 @@ class ChargesController < ApplicationController
     })
 
     Order.create(user: current_user, publisher: @game.publisher, game: @game)
-
+    # item = CartItem.create(cart: current_user.cart, game: @game)
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
