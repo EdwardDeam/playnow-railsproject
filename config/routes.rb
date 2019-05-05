@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :games
   resources :charges
   resources :orders
+  resources :carts
 
   get '/dashboard', to: 'dashboard#index', as: 'dashboard'
 

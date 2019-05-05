@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_121934) do
+ActiveRecord::Schema.define(version: 2019_05_05_133344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,9 @@ ActiveRecord::Schema.define(version: 2019_05_05_121934) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "cart_id"
+    t.bigint "game_id"
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["game_id"], name: "index_cart_items_on_game_id"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -58,8 +60,6 @@ ActiveRecord::Schema.define(version: 2019_05_05_121934) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "publisher_id"
-    t.bigint "cart_item_id"
-    t.index ["cart_item_id"], name: "index_games_on_cart_item_id"
     t.index ["publisher_id"], name: "index_games_on_publisher_id"
   end
 
@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(version: 2019_05_05_121934) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "games"
   add_foreign_key "carts", "users"
-  add_foreign_key "games", "cart_items"
   add_foreign_key "games", "publishers"
   add_foreign_key "orders", "games"
   add_foreign_key "orders", "publishers"
