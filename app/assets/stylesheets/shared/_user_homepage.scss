@@ -1,0 +1,68 @@
+.user_grid {
+  display: grid;
+  width: 90vw;
+  height: 600px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 400px 50px 1fr ;
+}
+.bio_display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 170px;
+  width: 170px;
+  border: 1px white solid;
+  border-radius: 50%;
+}
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  border: 1px white solid;
+}
+.games_display {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.games_one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px green solid;
+  width: 100%;
+  height: 160px;
+}
+.games_two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px green solid;
+  width: 100%;
+  height: 160px;
+}
+.games_three {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px green solid;
+  width: 100%;
+  height: 160px;
+}
