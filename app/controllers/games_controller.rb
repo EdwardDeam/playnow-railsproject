@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   # skip_authorize_resource :only => [:new, :create]
   def index
     @games = Game.all
@@ -45,8 +45,9 @@ class GamesController < ApplicationController
 
   def destroy
     @game = Game.find(params[:id])
-    @game.destroy
-    redirect_to root_path
+    @game.set_unactive
+    @game.save
+    redirect_to dashboard_path
   end
 
   private
