@@ -18,6 +18,7 @@
       <p>Only Owner should see this</p>
       <% end  %>
       <%= render "shared/stripe_form" %>
+      <p>><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id) %></p>
     </div>
   </div>  
 <%# </div>  %>

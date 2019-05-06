@@ -1,0 +1,16 @@
+<h1> Your Cart </h1>
+
+ <table>
+  <tr>
+    <th>Game</th>
+    <th>Price</th>
+  </tr>
+  <% @cart_items.each do |i| %>
+    <tr>
+      <%= i.game.title %>
+    </tr>
+    <tr>
+      <%= i.game.price_to_string %>
+    </tr>
+  <% end %>
+</table> 
