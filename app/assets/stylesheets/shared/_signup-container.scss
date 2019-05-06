@@ -93,11 +93,13 @@
 }
 .button_spacing {
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  width: 10px;
+  justify-content: center;
 }
 .custom_submit {
-  width: 150px;
+  display: flex;
+  justify-content: center;
+  width: 100px;
   text-decoration: none;
   text-align: center;
   font-size: 15px;
