@@ -5,10 +5,11 @@
       <ul class="navbar_container">
       <% if user_signed_in? %>
         <li class="secondary" ><%= link_to 'Profile', dashboard_path %></li>
-        <li class="secondary" ><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <li class="secondary" ><%= link_to 'Cart', cart_index_path %></li>
       <% if can? :create, Game %>
         <li class="secondary" ><%= link_to 'Publish', new_game_path %></li>
       <% end %>
+        <li class="secondary" ><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
         <%# link the Publish path  %>
       <% else %>
         <li class="secondary"><%= link_to 'Log In', new_user_session_path %></li>
