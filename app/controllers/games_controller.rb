@@ -32,6 +32,7 @@ class GamesController < ApplicationController
 
   def edit
     @game = Game.find(params[:id])
+    @price_decimal = @game.price_to_decimal
   end
 
   def update
