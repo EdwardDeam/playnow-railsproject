@@ -1,6 +1,7 @@
 class Game < ApplicationRecord
   belongs_to :publisher
   has_many :orders
+  has_many :cart_items
   has_many_attached :images
 
   def owner
