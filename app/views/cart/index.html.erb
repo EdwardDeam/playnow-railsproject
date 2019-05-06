@@ -1,18 +1,18 @@
-<h1> Your Cart </h1>
-
- <table>
-  <tr>
-    <th>Game</th>
-    <th>Price</th>
-  </tr>
-  <% @cart_items.each do |i| %>
+<div class='signup-container'>
+  <h1 class='registration_headings'> Your Cart </h1>
+  <table>
     <tr>
-      <%= i.game.title %>
+      <th>Game</th>
+      <th>Price</th>
     </tr>
-    <tr>
-      <%= i.game.price_to_string %>
-    </tr>
-  <% end %>
-</table> 
-
-<%= render "shared/stripe_cart" %>
+    <% @cart_items.each do |i| %>
+      <tr>
+        <%= i.game.title %>
+      </tr>
+      <tr>
+        <%= i.game.price_to_string %>
+      </tr>
+    <% end %>
+  </table> 
+  <%= render "shared/stripe_cart" %>
+</div>
