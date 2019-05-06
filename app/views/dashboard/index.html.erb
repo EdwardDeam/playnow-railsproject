@@ -1,5 +1,19 @@
-<% @games.length.times do |i| %>
-  <h1><%= @games.game_title(i) %></h1>
-  <h2><%= @games.game_publisher(i) %></h2>
-  <h3><%= @games.game_key(i) %></h3>
-<% end %>
+<%= render 'shared/banneradd' %>
+
+<div class='user_grid'>
+  <div class='bio_display'>
+    <div class='avatar'>avatar</div>
+    <div class='details'>details</div>
+  </div>
+  <div class='games_display'>
+    <% @games.length.times do |i| %>
+    <div class='games'>
+      <h1><%= @games.game_title(i) %></h1>
+      <h2><%= @games.game_publisher(i) %></h2>
+      <h3><%= @games.game_key(i) %></h3>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
