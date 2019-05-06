@@ -14,6 +14,8 @@ class Ability
     else
       can :read, :all
     end
+    can :manage, CartItem, owner: user.id
+    can :read, Cart, owner: user.id
   end
     # Define abilities for the passed in user here. For example:
     #
