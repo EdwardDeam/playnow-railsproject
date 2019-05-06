@@ -9,7 +9,12 @@
       <% if can? :create, Game %>
         <li class="secondary" ><%= link_to 'Publish', new_game_path %></li>
       <% end %>
-        <li class="secondary" ><%= button_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      <label class='custom_submit'>
+        Sign Out
+          <span style="display:none;">
+            <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+          </span>
+        </label>
         <%# link the Publish path  %>
       <% else %>
         <li class="secondary"><%= link_to 'Log In', new_user_session_path %></li>
