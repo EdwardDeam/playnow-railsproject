@@ -7,6 +7,8 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @total = @game.price
+    @price_string = @game.price_to_string
   end
 
   def new
