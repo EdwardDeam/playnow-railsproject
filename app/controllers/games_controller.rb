@@ -25,7 +25,7 @@ class GamesController < ApplicationController
 
       # TODO: New_Key_Email?? This function is for the creation of a game
       #       Should this be a different template??
-      KeyMailer.with(user: current_user).new_key_email.deliver_now
+      # KeyMailer.with(user: current_user).new_key_email.deliver_now
       redirect_to game_path(@game)
     end
   end
@@ -50,7 +50,7 @@ class GamesController < ApplicationController
     redirect_to dashboard_path
   end
 
-  private
+  private   
 
   def game_params
     sanitize_price
