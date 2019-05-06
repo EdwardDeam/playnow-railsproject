@@ -36,6 +36,9 @@ gem 'devise'
 # Use CanCanCan for User authentication
 gem 'cancancan'
 
+# Fix devise signout
+gem 'jquery-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
