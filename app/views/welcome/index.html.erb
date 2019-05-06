@@ -24,18 +24,6 @@
 </script>
 
 <div class='frontpage_container'>
-  <%# <div class='tile_box'>ADD
-  </div>
-  <div class='game_box'>GAME
-  </div>
-  <div class='tile_box'>ADD
-  </div>
-  <div class='game_box'>GAME
-  </div>
-  <div class='tile_box'>ADD
-  </div>
-  <div class='tile_box'>ADD
-  </div> %>
   <% @list.length.times do |index| %>
     <div class="tile_box">
       <h2><%= @list.game_title(index) %></h2>
