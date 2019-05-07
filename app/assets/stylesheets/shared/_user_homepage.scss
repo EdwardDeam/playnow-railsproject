@@ -54,3 +54,10 @@
   height: 160px;
   margin: 5px 0;
 }
+.publishes_games_buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-top: 10px;
+}
