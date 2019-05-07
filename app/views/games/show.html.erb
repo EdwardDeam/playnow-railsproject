@@ -9,15 +9,15 @@
     </div>
     <div class='bio_box'>
       <h1><%= @game.title %></h1>
-      <p>Price $<%= (@game.price)%></p>
       <p>Genre: <%= @game.genre %></p>
-      <p>Publisher: <%= @game.publisher.user.username %></p>
+      <h5>Publisher: <%= @game.publisher.user.username %></h5>
       <p>Description: <%= @game.description %></p>
       <% if can? :update, @game %>
       <% end  %>
-
-      <%= render "shared/stripe_form" %>
-      <p><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id) %></p>
+      <div class='publishes_games_buttons'>
+        <p><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id), class: 'custom_submit' %></p>
+        <p><%= render "shared/stripe_form" %></p>
+      </div>
     </div>
   </div>
 

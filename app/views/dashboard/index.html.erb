@@ -11,8 +11,10 @@
     <% @published.each do |game|  %>
       <div class='games'>
         <h1><%= game.title %></h1>
-        <p><%= link_to 'Edit', edit_game_path(game) %></p>
-        <p><%= link_to 'Delete', game_path(game), method: 'delete' %></p>
+        <div class='publishes_games_buttons'>
+          <p><%= link_to 'Edit', edit_game_path(game), class: 'custom_submit' %></p>
+          <p><%= link_to 'Delete', game_path(game), class: 'custom_submit', method: 'delete' %></p>
+        </div>
       </div>
     <% end  %>
 
