@@ -23,6 +23,10 @@ class WelcomeController < ApplicationController
       @list[index][:price]
     end
 
+    def game_image(index)
+      @list[index][:image]
+    end
+
     private
 
     def load_all
@@ -34,10 +38,12 @@ class WelcomeController < ApplicationController
         games << {
           title: game.title,
           publisher: game.publisher.user.username,
-          price: game.price_to_string
+          price: game.price_to_string,
+          image: game.images[0]
         }
+        Debug.console(games[-1][:image].class)
       end
-      return games
+      return games.reverse!
     end
 
   end
