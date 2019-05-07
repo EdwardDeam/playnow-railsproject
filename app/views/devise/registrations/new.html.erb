@@ -19,17 +19,36 @@
       <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
     </div>
 
-    <div class="checkbox">
-       Are you over the Age of 13? <input class='' type="checkbox" required name="age">
+    <div class='button_spacing'>
+      <label class='custom_submit'>
+        Upload Avatar
+        <span style="display:none;">
+        <%= f.file_field :images, class: "custom_submit", accept: 'image/jpg, image/png' %>
+        </span>
+      </label>
     </div>
 
-    <div class="checkbox">
-       Do you agree to our <u>Terms & Conditions</u> <input type="checkbox" required name="terms">
+    <div class='checkbox_spacing'>
+    <label class="container">Are you over the Age of 13?
+      <input type="checkbox" required>
+      <span class="checkmark"></span>
+    </label>
+    </div>
+
+    <div class='checkbox_spacing'>
+
+      <label class="container">Do you agree to our <u>Terms & Conditions</u>
+        <input type="checkbox" required>
+        <span class="checkmark"></span>
+      </label>
+
     </div>
  
-    <div class="checkbox">
-    Do you want to publish games?
-    <%= f.check_box :seller %>
+    <div class='checkbox_spacing'>
+    <label class="container">Do you want to publish games?</u>
+      <input type="checkbox" required>
+      <span class="checkmark"><%= f.check_box :seller, class: 'checkmark' %></span>
+    </label>
     </div>
 
     <div class="field">
