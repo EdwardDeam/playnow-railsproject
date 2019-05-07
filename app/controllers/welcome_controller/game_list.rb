@@ -27,6 +27,10 @@ class WelcomeController < ApplicationController
       @list[index][:image]
     end
 
+    def game_id(index)
+      @list[index][:id]
+    end
+    
     private
 
     def load_all
@@ -39,7 +43,8 @@ class WelcomeController < ApplicationController
           title: game.title,
           publisher: game.publisher.user.username,
           price: game.price_to_string,
-          image: game.images[0]
+          image: game.images[0],
+          id: game.id
         }
         Debug.console(games[-1][:image].class)
       end
