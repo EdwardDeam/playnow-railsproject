@@ -51,7 +51,7 @@ class GamesController < ApplicationController
     redirect_to dashboard_path
   end
 
-  private   
+  private
 
   def game_params
     sanitize_price

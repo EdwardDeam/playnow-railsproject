@@ -17,7 +17,7 @@ class GameTest < ActiveSupport::TestCase
     assert_equal 15.67, @game.price_to_decimal
   end
 
-  def test_decimal_to_price
-    assert_equal 5793, @game.decimal_to_price(5793)
+  def test_price_to_string
+    assert_equal '$57.93', @game.test_price_to_string(5793)
   end
 end
