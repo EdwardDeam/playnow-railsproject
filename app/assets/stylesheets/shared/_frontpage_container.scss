@@ -10,8 +10,33 @@
 .tile_box {
   width: 300px;
   height: 200px;
-  border: 1px greenyellow solid;
   margin: 5px 0px;
+}
+.background_image {
+  display: block;
+  position: absolute;
+  margin: auto;
+  width: 300px;
+  height: 200px;
+  opacity: 0.5;
+}
+.tile_title {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  text-align: center;
+}
+.tile_pub {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  text-align: center;
+}
+.tile_price {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  text-align: center;
 }
 .add_box {
   width: 300px;
