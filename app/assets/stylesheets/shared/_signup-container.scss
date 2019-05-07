@@ -141,4 +141,58 @@ button.stripe-button-el>span {
   border: 1px #40F99B solid;
   color: #40F99B;
   background-image: none;
+  transition: 0.5s;
+}
+.checkbox_button {
+  width: 20px;
+  height: 20px;
+  background-color: #473456;
+  border: 1px #40F99B solid;
+  color: #40F99B;
+}
+.checkbox_spacing {
+  margin: 10px 0;
+}
+.container {
+  text-align: left;
+  position: relative;
+  font-size: 22px;
+}
+.container input {
+  // position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+
+  height: 25px;
+  width: 25px;
+  background-color: #1F0B33;
+  border: 1px #40F99B solid;
+}
+.container:hover input ~ .checkmark {
+  background-color: #40F99B;
+}
+.container input:checked ~ .checkmark {
+  background-color: #1F0B33;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #40F99B;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }

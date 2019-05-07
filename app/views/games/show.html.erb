@@ -1,6 +1,5 @@
 <%= render 'shared/banneradd' %>
 
-<%# <div class='game_page_container'> %>
   <div class='game_container'>
     <div class='image_box_one'>Game Image 1
     </div>
@@ -15,10 +14,10 @@
       <p>Publisher: <%= @game.publisher.user.username %></p>
       <p>Description: <%= @game.description %></p>
       <% if can? :update, @game %>
-      <p>Only Owner should see this</p>
       <% end  %>
+
       <%= render "shared/stripe_form" %>
-      <p>><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id) %></p>
+      <p><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id) %></p>
     </div>
-  </div>  
-<%# </div>  %>
+  </div>
+

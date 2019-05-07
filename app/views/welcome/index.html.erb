@@ -27,14 +27,18 @@
   <% @list.length.times do |index| %>
     <%= link_to game_path(@list.game_id(index)) do %>
       <div class="tile_box">
-        <h2><%= @list.game_title(index) %></h2>
-        <h3><%= @list.game_publisher(index) %></h3>
-        <h4><%= @list.game_price(index) %></h4>
-        
         <% unless @list.game_image(index).nil? %>
-          <%= image_tag @list.game_image(index) %>
+          <%= image_tag @list.game_image(index), class: 'background_image'%>
         <% end %>
-      </div>  
+        <br>
+        <h1 class='tile_title'><%= @list.game_title(index) %></h1>
+        <br><br><br><br><br>
+        <h3 class='tile_pub'><%= @list.game_publisher(index) %></h3>
+        <br><br><br>
+        <h4 class='tile_price'><%= @list.game_price(index) %></h4>
+      </div>
     <% end %>
   <% end %>
+
+  
 </div>
