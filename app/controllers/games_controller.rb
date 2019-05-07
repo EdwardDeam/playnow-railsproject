@@ -55,7 +55,7 @@ class GamesController < ApplicationController
 
   def game_params
     sanitize_price
-    params.require(:game).permit(:title, :genre, :price, :description, :images)
+    params.require(:game).permit(:title, :genre, :price, :description, images: [])
   end
 
   def price_from_decimal(decimal_price)

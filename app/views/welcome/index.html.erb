@@ -41,6 +41,11 @@
       <h2><%= @list.game_title(index) %></h2>
       <h3><%= @list.game_publisher(index) %></h3>
       <h4><%= @list.game_price(index) %></h4>
+      
+      <% unless @list.game_image(index).nil? %>
+        <%= image_tag @list.game_image(index) %>
+        <p>NOT NULL</p>
+      <% end %>
     </div>
   <% end %>
 </div>
