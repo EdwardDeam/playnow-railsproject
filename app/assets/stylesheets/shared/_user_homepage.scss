@@ -43,13 +43,16 @@
   grid-row-end: 2;
   grid-column-start: 3;
   grid-column-end: 4;
+  h1 {
+    color: #ffe345;
+  }
 }
 .games {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  border: 1px green solid;
+  border: 2px #f940cb solid;
   width: 100%;
   height: 160px;
   margin: 5px 0;
@@ -78,10 +81,8 @@
   width: 100%;
   justify-content: space-between;
 }
-
 .cart_box {
   display: flex;
-
   flex-direction: column;
   justify-content: space-between;
   h1 {
@@ -92,5 +93,5 @@
 .cart_price {
   text-align: right;
   margin-bottom: 5px;
-  color: #ffbe45;
+  color: #ffe345;
 }
