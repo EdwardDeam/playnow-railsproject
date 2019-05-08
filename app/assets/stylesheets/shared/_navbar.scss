@@ -6,10 +6,11 @@
   align-items: center;
   background: #1F0B33;
   height: 50px;
+  z-index: 10;
 }
 .main a {
   display: inline-block;
-  width: 100px;
+  width: 150px;
   text-decoration: none;
   text-align: center;
   font-family: 'Libre Franklin', sans-serif;
@@ -29,7 +30,7 @@
 }
 .secondary a {
   display: inline-block;
-  width: 100px;
+  width: 120px;
   text-decoration: none;
   text-align: center;
   font-family: 'Libre Franklin', sans-serif;
