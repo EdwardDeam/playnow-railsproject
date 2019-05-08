@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px pink solid;
+  border: 2px #f940cb solid;
   grid-row-start: 1;
   grid-row-end: 6;
   grid-column-start: 3;
@@ -39,5 +39,14 @@
   h1 {
     text-align: center;
     margin-top: 20px;
+    color: #f9406f;
   }
+  p {
+    margin-left: 5px;
+    color: #ffe345;
+  }
+}
+.published_game {
+  display: flex;
+  flex-direction: row;
 }

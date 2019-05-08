@@ -11,6 +11,8 @@
   width: 300px;
   height: 200px;
   margin: 5px 0px;
+  border: 2px #f940cb solid;
+
 }
 .background_image {
   display: block;
@@ -26,6 +28,7 @@
   height: 200px;
   text-align: center;
   text-decoration: none;
+  font-size: 35px;
   color: rgb(243, 231, 255)
 }
 .tile_pub {
@@ -34,7 +37,8 @@
   height: 200px;
   text-align: center;
   text-decoration: none;
-  color: rgb(243, 231, 255)
+  font-size: 15px;
+  color: rgb(243, 231, 255);
 }
 .tile_price {
   position: absolute;
@@ -42,7 +46,8 @@
   height: 200px;
   text-align: center;
   text-decoration: none;
-  color: rgb(243, 231, 255)
+  font-size: 25px;
+  color: #ffe345;
 }
 .add_box {
   width: 300px;

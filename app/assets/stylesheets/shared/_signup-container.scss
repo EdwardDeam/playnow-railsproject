@@ -133,9 +133,7 @@
   color: #1F0B33;
   background: #BFFFC5;
 }
-.price {
-  color: yellow;
-}
+
 button.stripe-button-el,
 button.stripe-button-el>span {
   background-color: #473456 !important;
@@ -160,7 +158,6 @@ button.stripe-button-el>span {
   font-size: 22px;
 }
 .container input {
-  // position: absolute;
   opacity: 0;
   height: 0;
   width: 0;

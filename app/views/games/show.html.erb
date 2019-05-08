@@ -10,10 +10,10 @@
     <div class='bio_box'>
       <div>
         <h1><%= @game.title %></h1>
-        <p>Genre: <%= @game.genre %></p>
+        <p style="color:rgb(243, 231, 255);">Publisher: <%= @game.publisher.user.username %></p>
+        <p style="color:rgb(243, 231, 255);" >Genre: <%= @game.genre %></p>
         <p>Price: <%= @game.price_to_string %></p>
-        <p>Publisher: <%= @game.publisher.user.username %></p>
-        <p>Description: <%= @game.description %></p>
+        <p style="color:rgb(243, 231, 255);" >Description: <%= @game.description %></p>
       </div>
       <% unless can? :update, @game %>
         <div class='publishes_games_buttons'>
