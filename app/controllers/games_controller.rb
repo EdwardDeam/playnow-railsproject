@@ -23,6 +23,7 @@ class GamesController < ApplicationController
     unless current_user.publisher.nil?
       @publisher = current_user.publisher
       @game = @publisher.games.new(game_params)
+      @game.set_active
       @game.save
       # TODO: ADD MAILER
       GameMailer.with(user: current_user, game: @game.title).published_email.deliver_now
