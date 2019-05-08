@@ -36,18 +36,16 @@
     </div>
 
     <div class='checkbox_spacing'>
-
       <label class="container">Do you agree to our <u>Terms & Conditions</u>
         <input type="checkbox" required>
         <span class="checkmark"></span>
       </label>
-
     </div>
- 
-    <div>
-    <label for="user_seller">Do you want to publish games?</u>
-      
-      <%= f.check_box :seller %>
+
+    <div class='checkbox_spacing'>
+    <label class="container">Do you want to publish games?<%= f.check_box :seller%>
+    <input type="checkbox" >
+      <span class="checkmark"></span>
     </label>
     </div>
 
