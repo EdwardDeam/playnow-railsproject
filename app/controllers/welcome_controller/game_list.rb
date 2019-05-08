@@ -46,7 +46,6 @@ class WelcomeController < ApplicationController
           image: game.images[0],
           id: game.id
         }
-        Debug.console(games[-1][:image].class)
       end
       return games.reverse!
     end
