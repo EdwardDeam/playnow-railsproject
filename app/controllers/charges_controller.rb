@@ -22,7 +22,9 @@ class ChargesController < ApplicationController
         redirect_to game_path(@game)
       end
     # After the paymen is successful Create an Order to store the information.
-    Order.create(user: @user, publisher: @game.publisher, game: @game)
+    order = Order.create(user: @user, publisher: @game.publisher, game: @game)
+    
+    GameMailer.with(user: current_user, key: order.game_key).new_key_email.deliver_now
     redirect_to new_charge_path
   end
   
@@ -45,7 +47,8 @@ class ChargesController < ApplicationController
     end
 
     @cart.cart_items.each do |item|
-      Order.create(user: current_user, publisher: item.game.publisher, game: item.game)
+      order = Order.create(user: current_user, publisher: item.game.publisher, game: item.game)
+      GameMailer.with(user: current_user, key: order.game_key).new_key_email.deliver_now
       CartItem.delete(item.id)
     end
     redirect_to new_charge_path
