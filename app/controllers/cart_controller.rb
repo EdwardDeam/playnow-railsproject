@@ -10,6 +10,12 @@ class CartController < ApplicationController
     CartItem.create(cart: current_user.cart, game: game)
   end
 
+  def destroy
+    item = CartItem.find(params[:id])
+    item.destroy unless item.nil?
+    redirect_to cart_index_path
+  end
+
   def create
   end
 

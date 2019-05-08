@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/charges/new', to: 'charges#new', as: 'new_charge'
   post '/buynow', to: 'charges#buy_now', as: 'buy_now'
   post '/buycart', to: 'charges#buy_cart', as: 'buy_cart'
-
+  
   root 'welcome#index'
 end
