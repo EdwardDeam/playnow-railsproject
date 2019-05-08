@@ -1,6 +1,7 @@
 .signup-container {
   display: flex;
-  height: 80vh;
+  width: 50%;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -100,7 +101,7 @@
 .custom_submit {
   display: flex;
   justify-content: center;
-  width: 120px;
+  width: 150px;
   text-decoration: none;
   text-align: center;
   font-size: 15px;

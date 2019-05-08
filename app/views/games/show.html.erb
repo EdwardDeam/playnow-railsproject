@@ -8,16 +8,24 @@
     <div class='image_box_three'>Game Image 3
     </div>
     <div class='bio_box'>
-      <h1><%= @game.title %></h1>
-      <p>Genre: <%= @game.genre %></p>
-      <h5>Publisher: <%= @game.publisher.user.username %></h5>
-      <p>Description: <%= @game.description %></p>
+      <div>
+        <h1><%= @game.title %></h1>
+        <p>Genre: <%= @game.genre %></p>
+        <p>Price: <%= @game.price_to_string %></p>
+        <p>Publisher: <%= @game.publisher.user.username %></p>
+        <p>Description: <%= @game.description %></p>
+      </div>
       <% if can? :update, @game %>
       <% end  %>
       <div class='publishes_games_buttons'>
+      <% if user_signed_in? %>
         <p><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id), class: 'custom_submit' %></p>
         <p><%= render "shared/stripe_form" %></p>
+        <% end %>
       </div>
+      <% unless user_signed_in? %>
+      Login or Sign Up to purchase games
+      <% end %>
     </div>
   </div>
 
