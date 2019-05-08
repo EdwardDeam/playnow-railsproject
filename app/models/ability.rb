@@ -15,5 +15,6 @@ class Ability
     # Users can only view their own carts
     can :manage, CartItem, owner: user.id
     can :read, Cart, owner: user.id
+    can :read, Game
   end
 end

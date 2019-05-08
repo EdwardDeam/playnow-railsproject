@@ -15,14 +15,14 @@
         <p>Publisher: <%= @game.publisher.user.username %></p>
         <p>Description: <%= @game.description %></p>
       </div>
-      <% if can? :update, @game %>
+      <% unless can? :update, @game %>
+        <div class='publishes_games_buttons'>
+        <% if user_signed_in? %>
+          <p><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id), class: 'custom_submit' %></p>
+          <p><%= render "shared/stripe_form" %></p>
+          <% end %>
+        </div>
       <% end  %>
-      <div class='publishes_games_buttons'>
-      <% if user_signed_in? %>
-        <p><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id), class: 'custom_submit' %></p>
-        <p><%= render "shared/stripe_form" %></p>
-        <% end %>
-      </div>
       <% unless user_signed_in? %>
       Login or Sign Up to purchase games
       <% end %>
