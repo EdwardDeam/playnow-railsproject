@@ -25,7 +25,7 @@ class GamesController < ApplicationController
       @game = @publisher.games.new(game_params)
       @game.save
       # TODO: ADD MAILER
-      # KeyMailer.with(user: current_user).new_key_email.deliver_now
+      GameMailer.with([user: current_user, @game.title]).published_email.deliver_now
       redirect_to game_path(@game)
     end
   end
