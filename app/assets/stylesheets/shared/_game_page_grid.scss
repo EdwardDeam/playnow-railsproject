@@ -4,6 +4,7 @@
   height: 450px;
   grid-template-rows: 1fr 10px 1fr 10px 1fr;
   grid-template-columns: 400px 50px 1fr ;
+  margin-top: 50px;
 }
 .image_box_one {
   border: 1px yellow solid;
@@ -27,6 +28,9 @@
   grid-column-end: 2;
 }
 .bio_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px pink solid;
   grid-row-start: 1;
   grid-row-end: 6;
