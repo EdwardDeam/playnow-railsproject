@@ -7,7 +7,6 @@ class CartController < ApplicationController
 
   def new
     game = Game.find(cart_params[:game_id])
-    # CartItem.create(cart: current_user.cart, game: game)
     CartItem.create(cart: current_user.cart, game: game)
   end
 
@@ -16,10 +15,12 @@ class CartController < ApplicationController
 
   private
 
+  # Paramaters that are allowed to be sent through
   def cart_params
     params.permit(:game_id)
   end
 
+  # Total cost of all items in the cart
   def cart_total
     sum = 0
     @cart_items.each do |item|
@@ -28,11 +29,13 @@ class CartController < ApplicationController
     return sum
   end
 
+  # Loads all items from the Cart and also return the asssitated Games to lower
+  # Database calls.
   def load_cart
-    # current_user.cart.cart_items.includes(:game)
     current_user.cart.cart_items.includes(:game)
   end
 
+  # Returns the total as a deciaml with a '$'
   def total_to_string
     '$' + (@total / 100).to_s
   end

@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  # load_and_authorize_resource
+  load_and_authorize_resource
   # skip_authorize_resource :only => [:new, :create]
   def index
     @games = Game.all
@@ -12,19 +12,19 @@ class GamesController < ApplicationController
   end
 
   def new
+    # Users that are not sellers cannot publish games
     unless current_user.publisher.nil?
       @game = Game.new
     end
   end
 
   def create
+    # Users that are not sellers cannot publish games
     unless current_user.publisher.nil?
       @publisher = current_user.publisher
       @game = @publisher.games.new(game_params)
       @game.save
-
-      # TODO: New_Key_Email?? This function is for the creation of a game
-      #       Should this be a different template??
+      # TODO: ADD MAILER
       # KeyMailer.with(user: current_user).new_key_email.deliver_now
       redirect_to game_path(@game)
     end
@@ -45,6 +45,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
+    # Games are not removed from the database.
     @game = Game.find(params[:id])
     @game.set_unactive
     @game.save
@@ -58,14 +59,15 @@ class GamesController < ApplicationController
     params.require(:game).permit(:title, :genre, :price, :description, images: [])
   end
 
+  # Convert a dollar value into a cent value
   def price_from_decimal(decimal_price)
-    # decimal_price will most likely be a string
+    # decimal_price will most likely be a string from params
     (decimal_price.to_f * 100.0).to_i
   end
 
   def sanitize_price
-    # If the price being passed in is a demimal or float, convert it to a whole number.
-    # Prices are stored in cents in the database.
+    # The price being passed in will be a demimal or float, convert it to a whole
+    # number. Prices are stored in cents in the database.
     if params[:game][:price].class != Integer
       params[:game][:price] = price_from_decimal(params[:game][:price])
     end

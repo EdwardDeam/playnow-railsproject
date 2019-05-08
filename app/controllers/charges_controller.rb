@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
   def new
   end
 
+  # Buy now is called if the User want to purchase a single game.
   def buy_now
     @game = Game.find(params[:game_id])
     @user = current_user
@@ -9,17 +10,18 @@ class ChargesController < ApplicationController
       email: params[:stripeEmail],
       source: params[:stripeToken],
     })
-    begin
-    charge = Stripe::Charge.create({
-        customer: customer.id,
-        amount: params[:amount],
-        description: 'Rails Stripe customer',
-        currency: 'usd',
-      })
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to game_path(@game)
-    end
+      begin
+      charge = Stripe::Charge.create({
+          customer: customer.id,
+          amount: params[:amount],
+          description: 'Rails Stripe customer',
+          currency: 'usd',
+        })
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to game_path(@game)
+      end
+    # After the paymen is successful Create an Order to store the information.
     Order.create(user: @user, publisher: @game.publisher, game: @game)
     redirect_to new_charge_path
   end
