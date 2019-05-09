@@ -73,20 +73,30 @@
 .price_spacing {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
+
+}
+.delete_spacing {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .game_spacing {
   display: flex;
-  flex-direction: column;
   width: 100%;
   justify-content: space-between;
+  flex-direction: column;
 }
 .cart_box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
+  width: 80%;
   h1 {
-    text-align: center;
+    width: 100%;
+    text-align: left;
     margin-top: 20px;
   }
 }
@@ -94,4 +104,7 @@
   text-align: right;
   margin-bottom: 5px;
   color: #ffe345;
+}
+.cart_submit {
+  padding: 15px 0;
 }
