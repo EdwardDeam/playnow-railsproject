@@ -2,8 +2,10 @@
 
 <div class='user_grid'>
   <div class='bio_display'>
+  <% unless @list.game_image(index).nil? %>
     <div class='avatar'>avatar
-    <%= image_tag @user_avatar%>
+      <%= image_tag @user_avatar%>
+  <% end %>
     </div>
 
     <div class='details'>details</div>
