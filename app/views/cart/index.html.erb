@@ -4,9 +4,8 @@
       <% @cart_items.each do |i| %>
         <h1><div class='cart_game_title'><%= i.game.title %></div></h1>
         <h1><div class='cart_price'><%= i.game.price_to_string %></div></h1>
-  </div>
   
-  <div class='delete_spacing'>
+  
       <label class='custom_delete'>
           Delete
             <span style="display:none;">
@@ -14,14 +13,15 @@
             </span>
         </label>
       <% end %>
-  </div>
+  
 
-  <div class='price_spacing'>
-      <h1><div>Total: </div></h1>
-      
-      <div class='cart_price'><h1><u><%= @price_string %></u></h1></div>
-  </div>
+    <div class='price_spacing'>
+        <h1><div>Total:</div></h1>
+        
+        <div class='cart_price'><h1><u><%= @price_string %></u></h1></div>
+    </div>
 
-  <%= render "shared/stripe_cart" %>
+  </div>
+  <%= render "shared/stripe_cart", class: 'cart_submit' %>
 </div>
 
