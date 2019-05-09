@@ -73,18 +73,26 @@
 .price_spacing {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
+
+}
+.delete_spacing {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .game_spacing {
   display: flex;
-  flex-direction: column;
   width: 100%;
   justify-content: space-between;
+  flex-direction: column;
 }
 .cart_box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   h1 {
     text-align: center;
     margin-top: 20px;
