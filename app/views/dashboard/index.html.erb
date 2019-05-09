@@ -2,9 +2,12 @@
 
 <div class='user_grid'>
   <div class='bio_display'>
+  <% unless @user_avatar.nil? %>
     <div class='avatar'>avatar
-    <%= image_tag @user_avatar%>
+      <%= image_tag @user_avatar%>
     </div>
+  <% end %>
+      <p><%= link_to 'Edit Proflie', edit_user_registration_path %></p>
 
     <div class='details'>details</div>
   </div>
