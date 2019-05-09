@@ -17,7 +17,7 @@
           <h1><%= game.title %></h1>
           <div class='publishes_games_buttons'>
             <p><%= link_to 'Edit', edit_game_path(game), class: 'custom_submit' %></p>
-            <p><%= link_to 'Delete', game_path(game), class: 'custom_submit', method: 'delete' %></p>
+            <p><%= button_to 'Delete', game_path(game), class: 'custom_submit', method: 'delete' %></p>
           </div>
         </div>
       <% end  %>
