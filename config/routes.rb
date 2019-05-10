@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'users/registrations' }
   resources :games
   resources :orders
   resources :cart
@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/charges/new', to: 'charges#new', as: 'new_charge'
   post '/buynow', to: 'charges#buy_now', as: 'buy_now'
   post '/buycart', to: 'charges#buy_cart', as: 'buy_cart'
-  
+
   root 'welcome#index'
 end
