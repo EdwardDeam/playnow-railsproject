@@ -1,27 +1,20 @@
-# README
+# Play now
+By [Cooper Viktor](https://github.com/CoopsCodes) and [Edward Deam](https://github.com/EdwardDeam)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup Instructions
+1. Clone this repo
+2. `bundle install` to install all required dependencies
+3. `rake db:setup` to create local database migrate and seed
+4. `rails s` to run the rails server
+5. Load http://localhost:3000/ in the browser
 
-Things you may want to cover:
+#### Logins
+Buyer Users
+- user1@test.com
+- user2@test.com
+- user3@test.com
+Selling Users
+- pub1@test.com
+- pub2@test.com
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# TODO
-* The .ruby-version file has been git ignored so that the project can run on different versions for testing
+all passwords are set to `qwert123`
