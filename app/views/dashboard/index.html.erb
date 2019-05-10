@@ -17,9 +17,9 @@
       <div class='games'>
         <h1><%= game.title %></h1>
         <div class='publishes_games_buttons'>
-          <p><%= link_to 'Edit', edit_game_path(game), class: 'custom_submit' %></p>
-          
           <div class='button_spacing'>
+          <%= link_to 'Edit', edit_game_path(game), class: 'custom_submit' %>
+          
           <label class='custom_submit'>
             Delete
             <span style="display:none;">
