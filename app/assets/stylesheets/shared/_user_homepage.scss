@@ -22,9 +22,8 @@
   justify-content: center;
   height: 170px;
   width: 170px;
-  border: 1px white solid;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 .details {
   display: flex;
@@ -45,6 +44,7 @@
   grid-column-end: 4;
   h1 {
     color: #ffe345;
+    text-decoration: underline;
   }
 }
 .games {

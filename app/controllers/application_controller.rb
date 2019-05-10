@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  
   protected
 
   # Recomended devise way to allow extra prams at user sign up.

@@ -136,6 +136,26 @@
   color: #1F0B33;
   background: #BFFFC5;
 }
+.custom_edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  border: 1px #40F99B solid;
+  color: #f940cb;
+  background: #473456;
+  padding: 6px 6px;
+  transition: 0.5s;
+  list-style: none;
+}
+.custom_edit:hover {
+  color: #1F0B33;
+  background: #BFFFC5;
+}
 .button_to {
   width: 150px;
   text-decoration: none;
