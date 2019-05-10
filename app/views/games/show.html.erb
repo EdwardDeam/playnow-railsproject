@@ -1,12 +1,13 @@
 <%= render 'shared/banneradd' %>
 
   <div class='game_container'>
-    <div class='image_box_one'>Game Image 1
-    </div>
-    <div class='image_box_two'>Game Image 2
-    </div>
-    <div class='image_box_three'>Game Image 3
-    </div>
+        <div class='column_images'>
+          <% unless @game.images.nil? %>
+            <% @game.images.each do |image| %>
+                <%= image_tag image, class: 'image_box' %>
+            <% end %>
+          <% end %>
+        </div>
     <div class='bio_box'>
       <div>
         <h1><%= @game.title %></h1>

@@ -2,28 +2,37 @@
 
 <div class='user_grid'>
   <div class='bio_display'>
-  <% unless @list.game_image(index).nil? %>
-    <div class='avatar'>avatar
-      <%= image_tag @user_avatar%>
-  <% end %>
+  <% if @user_avatar.attached? %>
+    <div class='avatar'>
+      <%= image_tag @user_avatar, class: 'avatar' %>
     </div>
-
-    <div class='details'>details</div>
+  <% end %>
+      <p><%= link_to 'Edit Proflie', edit_user_registration_path, class: 'custom_edit' %></p>
   </div>
   
   <div class='games_display'>
     <% unless @published.nil? %>
     <h1>Your Published Games</h1>
       <% @published.each do |game|  %>
-        <div class='games'>
-          <h1><%= game.title %></h1>
-          <div class='publishes_games_buttons'>
-            <p><%= link_to 'Edit', edit_game_path(game), class: 'custom_submit' %></p>
-            <p><%= button_to 'Delete', game_path(game), class: 'custom_submit', method: 'delete' %></p>
-          </div>
+      <div class='games'>
+        <h1><%= game.title %></h1>
+        <div class='publishes_games_buttons'>
+          <div class='button_spacing'>
+          <%= link_to 'Edit', edit_game_path(game), class: 'custom_submit' %>
+          
+          <label class='custom_submit'>
+            Delete
+            <span style="display:none;">
+              <%= button_to 'Delete', game_path(game), method: 'delete' %>
+            </span>
+          </label>
         </div>
+
+        </div>
+      </div>
       <% end  %>
     <% end %>
+
   <h1>Your Game Keys</h1>
     <% @games.length.times do |i| %>
     <div class='games'>
@@ -33,7 +42,6 @@
     </div>
     <% end %>
     <% if can? :create, Game %>
-    
   <% end %>
   </div>
 </div>

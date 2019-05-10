@@ -7,8 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :publisher, dependent: :destroy
-  has_one :cart, dependent: :destroy
+  has_one :publisher
+  has_one :cart
   has_one_attached :avatar, dependent: :destroy
   has_many :orders
   # Allow description to be called directly from the user
@@ -18,6 +18,21 @@ class User < ApplicationRecord
   after_create :create_publisher, if: :seller
   # Give every user an order cart
   after_create :create_cart
+
+  # instead of deleting, indicate the user requested a delete & timestamp it
+  def soft_delete
+    update_attribute(:deleted_at, Time.current)
+  end
+
+  # ensure user account is active
+  def active_for_authentication?
+    super && !deleted_at
+  end
+
+  # provide a custom message for a deleted account
+  def inactive_message
+    !deleted_at ? super : :deleted_account
+  end
 
   private
 
