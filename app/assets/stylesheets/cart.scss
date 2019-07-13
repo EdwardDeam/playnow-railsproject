@@ -30,7 +30,7 @@
 .cart-delete-btn {
   background-color: #ffffff;
   border: none;
-  color: #ff2a49;
+  color: #ff2a49 !important;
   // padding: 5px;
 }
 .totals {
@@ -50,10 +50,23 @@
 }
 .new-cart {
   text-align: center;
-  border: 2px solid #797979;
+  background-color: #f2f3f3;
   padding: 10px 20px 20px 20px;
-  width: auto;
+  width: 500px;
+  height: 300px;
   border-radius: 5px;
+}
+.added-game {
+  margin-top: 30px;
+}
+.added-game h3 {
+  color: #9cb946;
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 45px;
+}
+.cart_games_buttons {
+  margin-top: 70px;
 }
 .cart_games_buttons a {
   text-decoration: none;
