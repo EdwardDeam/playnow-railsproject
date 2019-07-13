@@ -31,12 +31,12 @@ pub1_obj.save
 pub2_obj.save
 puts
 puts 'Generating Games...'
-pub1_obj.games.create({active: true, title: 'MitroSoft Game One', genre: 'RPG', price: 1000, description: 'Description of game one'})
-pub1_obj.games.create({active: true, title: 'MitroSoft Game Two', genre: 'Strategy', price: 1560, description: 'Description of game two'})
-pub1_obj.games.create({active: true, title: 'MitroSoft Game Three', genre: 'FPS', price: 3450, description: 'Description of game three'})
-pub1_obj.games.create({active: true, title: 'MitroSoft Game Four', genre: 'RPG', price: 1000, description: 'Description of game four'})
-pub2_obj.games.create({active: true, title: 'Space Game One', genre: 'Strategy', price: 1670, description: 'Description of game two'})
-pub2_obj.games.create({active: true, title: 'Space Game Two', genre: 'Undefinable', price: 90000, description: 'The greatest game known to man'})
+pub1_obj.games.create({active: true, title: 'MitroSoft Game One', genre: 'RPG', price: 1999, description: 'Description of game one'})
+pub1_obj.games.create({active: true, title: 'MitroSoft Game Two', genre: 'Strategy', price: 1399, description: 'Description of game two'})
+pub1_obj.games.create({active: true, title: 'MitroSoft Game Three', genre: 'FPS', price: 1999, description: 'Description of game three'})
+pub1_obj.games.create({active: true, title: 'MitroSoft Game Four', genre: 'RPG', price: 1599, description: 'Description of game four'})
+pub2_obj.games.create({active: true, title: 'Space Game One', genre: 'Strategy', price: 2999, description: 'Description of game two'})
+pub2_obj.games.create({active: true, title: 'Space Game Two', genre: 'Undefinable', price: 2999, description: 'The greatest game known to man'})
 
 games = Game.all
 games.each do |g|
