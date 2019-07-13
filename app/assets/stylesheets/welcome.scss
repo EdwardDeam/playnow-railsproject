@@ -11,8 +11,7 @@
 }
 
 .tile_box {
-  height: 230px;
-  // border-top: solid 0.2px #bebdbd;
+  height: 350px;
   box-shadow: 0 2px 2px #ccc;
 }
 
@@ -32,7 +31,10 @@
   font-size: 16px;
   font-weight: 700;
 }
-
+.tile-bottom {
+  width: 95%;
+  margin: 0 auto;
+}
 .tile_pub {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -64,4 +66,3 @@
 .background_image {
   width: 100%;
 }
-

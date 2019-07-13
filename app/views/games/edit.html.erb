@@ -1,27 +1,11 @@
 <div class='signup-container'>
   <h1 class='registration_headings'>Edit your Game!</h1>
   <%= form_for @game do |f| %>
-
-  <div class="field">
-    <%= f.text_field :title, placeholder: "Title" %>
-  </div>
-
-  <div class='field'>
-  <%= f.text_field :genre, placeholdar: 'Genre' %>
-  </div>
-
-  <div class='field'>
-  
-  <%= f.number_field :price, value: @price_decimal, placeholder: 'Price', step: 0.01 %>
-  </div>
-
-  <div class='field'>
-  <%= f.text_area :description, placeholder: 'Description' %>
-  </div>
-
-  <div class='button_spacing'>
-  <%= f.submit "UPDATE", class: 'custom_submit' %>
-  </div>
+    <%= f.text_field :title, placeholder: "Title", :class=>"field" %>
+    <%= f.text_field :genre, placeholdar: 'Genre', :class=>"field" %>  
+    <%= f.number_field :price, value: @price_decimal, placeholder: 'Price', step: 0.01, :class=>"field" %>
+    <%= f.text_area :description, placeholder: 'Description', :class=>"field" %>
+    <%= f.submit "UPDATE", class: 'submit_button' %>
   <% end %>
 
 </div>

@@ -5,12 +5,14 @@
         <% unless @list.game_image(index).nil? %>
           <%= image_tag @list.game_image(index), class: 'background_image'%>
         <% end %>
-        <div class='tile_row'>        
-          <h1 class='tile_title'><%= @list.game_title(index) %></h1>
-          <button class='tile_price'><%= @list.game_price(index) %></button>
+        <div class="tile-bottom">
+          <div class='tile_row'>        
+            <h1 class='tile_title'><%= @list.game_title(index) %></h1>
+            <button class='tile_price'><%= @list.game_price(index) %></button>
+          </div>
+          <h3 class='tile_pub'><%= @list.game_publisher(index) %></h3>
+          <h3 class='tile_genre'><%= @list.game_genre(index) %></h3>
         </div>
-        <h3 class='tile_pub'><%= @list.game_publisher(index) %></h3>
-        <h3 class='tile_genre'><%= @list.game_genre(index) %></h3>
       </div>
     <% end %>
   <% end %>
