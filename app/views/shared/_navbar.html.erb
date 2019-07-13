@@ -1,24 +1,26 @@
 <div class="navbar_container">
-      <ul>
-        <li class="main"><%= link_to 'Home', root_path %></li>
-      </ul>
-      <ul class="navbar_container">
-      <% if user_signed_in? %>
-        <li class="secondary" ><%= link_to 'Profile', dashboard_path %></li>
-        <li class="secondary" ><%= link_to 'Cart', cart_index_path %></li>
+  <div>
+    <%= link_to 'PlayNow', root_path, :class=>"navbar_left" %>
+  </div>
+  <div class="navbar_right">
+    <% if user_signed_in? %>
+      <%= link_to 'Profile', dashboard_path, :class=>"secondary" %>
+      <%= link_to 'Cart', cart_index_path, :class=>"secondary" %>
+
       <% if can? :create, Game %>
-        <li class="secondary" ><%= link_to 'Publish', new_game_path %></li>
+        <%= link_to 'Publish', new_game_path, :class=>"secondary" %>
       <% end %>
+
       <label class='custom_submit'>
         Sign Out
           <span style="display:none;">
             <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
           </span>
-        </label>
-        <%# link the Publish path  %>
-      <% else %>
-        <li class="secondary"><%= link_to 'Log In', new_user_session_path %></li>
-        <li class="secondary"><%= link_to 'Sign Up', new_user_registration_path %></li>
-      <% end %>
-      </ul>
+      </label>
+      <%# link the Publish path  %>
+    <% else %>
+      <%= link_to 'Log In', new_user_session_path, :class=>"secondary" %>
+      <%= link_to 'Sign Up', new_user_registration_path, :class=>"secondary" %>
+    <% end %>
   </div>
+</div>

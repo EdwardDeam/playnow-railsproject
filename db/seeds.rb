@@ -40,6 +40,7 @@ pub2_obj.games.create({active: true, title: 'Space Game Two', genre: 'Undefinabl
 
 games = Game.all
 games.each do |g|
+  g.images.attach(io: File.open('app/assets/images/1.jpg'), filename: '1.jpg', content_type: 'image/jpg')
   puts "Game #{g.title} created."
 end
 puts

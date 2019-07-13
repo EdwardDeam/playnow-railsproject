@@ -1,28 +1,3 @@
-<div class='promoted_games'>
-  <img class='promoted_slides' src="https://dl.dropbox.com/s/khpmgv9ezbs8mey/dream-daddy.png" />
-  <img class='promoted_slides' src="https://dl.dropbox.com/s/3mewlr1t5mevazc/crimelife3.png" />
-  <img class='promoted_slides' src="https://dl.dropbox.com/s/h3v1oz9yiux2b6w/theSimsTorture.jpg" />
-  <img class='promoted_slides' src="https://dl.dropbox.com/s/piinkbraw7li6up/GuitarMasterHero.jpg" />
-</div>
-
-
-<script>
-  var myIndex = 0;
-  carousel();
-
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("promoted_slides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 3000); // Change image every 3 seconds
-  }
-</script>
-
 <div class='frontpage_container'>
   <% @list.length.times do |index| %>
     <%= link_to game_path(@list.game_id(index)) do %>
@@ -30,12 +5,12 @@
         <% unless @list.game_image(index).nil? %>
           <%= image_tag @list.game_image(index), class: 'background_image'%>
         <% end %>
-        <br>
-        <h1 class='tile_title'><%= @list.game_title(index) %></h1>
-        <br><br><br><br><br>
+        <div class='tile_row'>        
+          <h1 class='tile_title'><%= @list.game_title(index) %></h1>
+          <button class='tile_price'><%= @list.game_price(index) %></button>
+        </div>
         <h3 class='tile_pub'><%= @list.game_publisher(index) %></h3>
-        <br><br><br>
-        <h4 class='tile_price'><%= @list.game_price(index) %></h4>
+        <h3 class='tile_genre'><%= @list.game_genre(index) %></h3>
       </div>
     <% end %>
   <% end %>

@@ -14,15 +14,42 @@
  *= require_self
  */
 
-@import "bootstrap";
+// @import "bootstrap";
 
 /* Import Font */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 /* Import other css components */
+@import "welcome.scss";
+@import "./shared/navbar";
 
 /* Any style that is common to all pages */
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  color: #222222;
+}
+
+a {
+  color: #222222;
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  background: #f2f3f3;
+}
+
+//buttons
+.submit_button {
+  background: #a3b147;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
 }

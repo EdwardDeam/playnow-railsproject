@@ -2,17 +2,10 @@
   <h1 class='registration_headings'>Welcome Back!</h1>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.email_field :email, placeholder: 'Email', autofocus: true, autocomplete: "email" %>
-    </div>
+      <%= f.email_field :email, placeholder: 'Email', autofocus: true, autocomplete: "email", :class=>"field" %>
+      <%= f.password_field :password, placeholder: 'Password', autocomplete: "current-password", :class=>"field" %>
 
-    <div class="field">
-      <%= f.password_field :password, placeholder: 'Password', autocomplete: "current-password" %>
-    </div>
-
-    <div class='button_spacing'>
-      <%= f.submit "Log in", class: 'custom_submit' %>
-    </div>
+      <%= f.submit "Log in", class: 'submit_button' %>
   <% end %>
 
 </div>

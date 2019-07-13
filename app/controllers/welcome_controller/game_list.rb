@@ -27,6 +27,10 @@ class WelcomeController < ApplicationController
       @list[index][:image]
     end
 
+    def game_genre(index)
+      @list[index][:genre]
+    end
+
     def game_id(index)
       @list[index][:id]
     end
@@ -44,6 +48,7 @@ class WelcomeController < ApplicationController
           publisher: game.publisher.user.username,
           price: game.price_to_string,
           image: game.images[0],
+          genre: game.genre,
           id: game.id
         }
       end
