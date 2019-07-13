@@ -1,0 +1,34 @@
+.navbar_container {
+  height: 70px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.navbar_left {
+  padding-left: 20px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  // color: #da2c49;
+  color: #97b147;
+}
+
+.navbar_right {
+}
+
+.secondary {
+  margin-right: 20px;
+  background: #da2c49;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.secondary:hover {
+  background: #97b147;
+}

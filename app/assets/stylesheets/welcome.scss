@@ -1,3 +1,67 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.frontpage_container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+.tile_box {
+  height: 230px;
+  // border-top: solid 0.2px #bebdbd;
+  box-shadow: 0 2px 2px #ccc;
+}
+
+.tile_box:hover {
+  a {
+    text-decoration: none;
+  }
+}
+
+.tile_row {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tile_title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tile_pub {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #da2c49;
+}
+
+.tile_price {
+  background-color: #797979;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  width: 50px;
+}
+
+.tile_genre {
+  font-size: 12px;
+  font-weight: 700;
+  color: #787878;
+}
+
+.tile_price:hover {
+  background: #97b147;
+}
+
+.background_image {
+  width: 100%;
+}
+

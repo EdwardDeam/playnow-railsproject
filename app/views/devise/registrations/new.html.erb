@@ -3,64 +3,33 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.text_field :first_name, placeholder: "First Name", autofocus: true, autocomplete: "first-name" %>
-    </div>
+      <%= f.text_field :first_name, placeholder: "First Name", autofocus: true, autocomplete: "first-name", :class=>"field" %>
+      <%= f.text_field :last_name, placeholder: "Last Name", autofocus: true, autocomplete: "last-name", :class=>"field" %>
+      <%= f.text_field :username, placeholder: "Username", autofocus: true, autocomplete: "username", :class=>"field" %>
+      <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", :class=>"field" %>
 
-    <div class="field">
-      <%= f.text_field :last_name, placeholder: "Last Name", autofocus: true, autocomplete: "last-name" %>
-    </div>
-
-    <div class="field">
-      <%= f.text_field :username, placeholder: "Username", autofocus: true, autocomplete: "username" %>
-    </div>
-
-    <div class="field">
-      <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class='button_spacing'>
-      <label class='custom_submit'>
-        Upload Avatar
-        <span style="display:none;">
-        <%= f.file_field :avatar, class: "custom_submit", accept: 'image/jpg, image/png' %>
-        </span>
-      </label>
-    </div>
-
-    <div class='checkbox_spacing'>
-    <label class="container">Are you over the Age of 13?
-      <input type="checkbox" required>
-      <span class="checkmark"></span>
-    </label>
-    </div>
-
-    <div class='checkbox_spacing'>
-      <label class="container">Do you agree to our <u>Terms & Conditions</u>
-        <input type="checkbox" required>
-        <span class="checkmark"></span>
-      </label>
-    </div>
-
-    <div class='checkbox_spacing'>
-    <label class="container">Do you want to publish games?<%= f.check_box :seller%>
-    <input type="checkbox" >
-      <span class="checkmark"></span>
-    </label>
-    </div>
-
-    <div class="field">
       <% if @minimum_password_length %>
-      <% end %><br />
-      <%= f.password_field :password, placeholder: "Password - 6 Characters Minimum", autocomplete: "new-password" %>
-    </div>
+      <% end %>
+      <%= f.password_field :password, placeholder: "Password - 6 Characters Minimum", autocomplete: "new-password", :class=>"field" %>
+      <%= f.password_field :password_confirmation, placeholder: "Re-Enter Password", autocomplete: "new-password", :class=>"field" %>
+      <div class="checkbox">
+        <div class='checkbox_spacing'>
+          <input type="checkbox" required>
+          <label class="container">Are you over the Age of 13?</label>
+        </div>
 
-    <div class="field">
-      <%= f.password_field :password_confirmation, placeholder: "Re-Enter Password", autocomplete: "new-password" %>
-    </div>
+        <div class='checkbox_spacing'>
+          <input type="checkbox" required>
+          <label class="container">Do you agree to our <u>Terms & Conditions</u></label>
+        </div>
 
-    <div class='button_spacing'>
-      <%= f.submit "Sign up", class: 'custom_submit' %>
-    </div>
+        <div class='checkbox_spacing'>
+          <input type="checkbox" >
+          <label class="container"><%= f.check_box :seller%>Do you want to publish games?</label>
+        </div>
+      </div>
+
+      <%= f.submit "Sign up", class: 'submit_button' %>
+
   <% end %>
 </div>
