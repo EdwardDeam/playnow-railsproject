@@ -1,3 +1,111 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.game_container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.game_container_top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 70vh;
+  margin-bottom: 10px;
+}
+.bio_box_left {
+  width: 55%;
+  background: #f2f3f3;
+}
+
+.bio_box_left_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// .bio_box_title {
+//   padding-left: 15px;
+// }
+
+.bio_box_publisher,
+.bio_box_genre {
+  margin-bottom: 5px;
+  // padding-left: 15px;
+}
+
+.bio_box_publisher {
+  color: #dc3649;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.bio_box_genre {
+  color: #787878;
+  font-weight: 700;
+}
+
+.bio_box_description {
+  color: #787878;
+  margin-top: 20px;
+}
+
+.bio_box_right {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background: #f2f3f3;
+}
+
+.game-price {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 15px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 45px;
+  text-align: center;
+}
+
+.bio_box_image {
+  width: 100%;
+  margin: 0 auto;
+}
+
+// .publishes_games_buttons {
+//   width: 100%;
+//   margin-top: 30px;
+//   background: lightcoral;
+// }
+
+.add_to_cart_btn {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: #a3b147;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.add_to_cart_btn:hover {
+  background: #97b147;
+}
+
+.game_container_bottom {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.image_box {
+  width: 100%;
+}

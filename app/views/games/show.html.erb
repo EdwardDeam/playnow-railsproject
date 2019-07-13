@@ -1,32 +1,44 @@
 <%= render 'shared/banneradd' %>
 
   <div class='game_container'>
-        <div class='column_images'>
-          <% unless @game.images.nil? %>
-            <% @game.images.each do |image| %>
-                <%= image_tag image, class: 'image_box' %>
-            <% end %>
-          <% end %>
+
+    <div class='game_container_top'>
+      <div class='bio_box_left'>
+        <div class="bio_box_left_top">
+          <h1 class="bio_box_title"><%= @game.title %></h1>
+          <h4 class="bio_box_publisher">Publisher: <%= @game.publisher.user.username %></h4>
+          <h5 class="bio_box_genre">Genre: <%= @game.genre %></h5>
         </div>
-    <div class='bio_box'>
-      <div>
-        <h1><%= @game.title %></h1>
-        <p style="color:rgb(243, 231, 255);">Publisher: <%= @game.publisher.user.username %></p>
-        <p style="color:rgb(243, 231, 255);" >Genre: <%= @game.genre %></p>
-        <p>Price: <%= @game.price_to_string %></p>
-        <p style="color:rgb(243, 231, 255);" >Description: <%= @game.description %></p>
+        <p class="bio_box_description">Description: <%= @game.description %></p>
+        <p class="bio_box_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque in enim inventore dolor facere, exercitationem non illum numquam, dolores molestiae saepe eveniet aut perspiciatis omnis reiciendis dolorum consequatur hic excepturi esse doloribus. Accusantium quos alias aperiam, quaerat numquam aspernatur veritatis voluptates! Perspiciatis, ipsa officia illum cumque rem nobis quis enim, id unde nesciunt, voluptatem iure sit. Sequi fugiat error fugit optio. Qui, soluta, voluptas fugit amet ipsa blanditiis, similique dolor beatae ab fugiat iste tempora natus modi dolore accusantium consectetur consequatur unde cum placeat! Dicta doloremque enim similique ipsum quod, et quaerat veniam repellat placeat animi dignissimos perspiciatis, nostrum dolore.</p>
       </div>
-      <% unless can? :update, @game %>
-        <div class='publishes_games_buttons'>
-        <% if user_signed_in? %>
-          <p><%= link_to 'Add To Cart', new_cart_path(game_id: @game.id), class: 'custom_submit' %></p>
-          <p><%= render "shared/stripe_form" %></p>
-          <% end %>
-        </div>
-      <% end  %>
-      <% unless user_signed_in? %>
-      Login or Sign Up to purchase games
+      
+
+      <div class='bio_box_right'>
+        <%= image_tag @game.images[0], class: 'bio_box_image' %>
+        <p class="game-price"><%= @game.price_to_string %></p>
+        <% unless can? :update, @game %>
+
+            <% if user_signed_in? %>
+              <%= link_to 'ADD TO CART', new_cart_path(game_id: @game.id), class: 'add_to_cart_btn' %>
+              <%= render "shared/stripe_form" %>
+              <div class='add_to_cart_btn'>BUY NOW</div>
+              <% end %>
+
+        <% end  %>
+        <% unless user_signed_in? %>
+        Login or Sign Up to purchase games
+        <% end %>
+      </div>
+    </div>  
+
+    <div class='game_container_bottom'>
+      <% unless @game.images.nil? %>
+        <% @game.images.each do |image| %>
+            <%= image_tag image, class: 'image_box' %>
+        <% end %>
       <% end %>
     </div>
+
   </div>
 
