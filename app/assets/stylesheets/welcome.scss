@@ -1,22 +1,3 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-* {
-  margin: 0;
-  font-family: 'Libre Franklin', sans-serif;
-}
-body {
-  display: flex;
-  width: 100vw;
-  align-items: center;
-  flex-direction: column;
-  background: #1F0B33;
-  color: aliceblue;
-}
-.registration_headings {
-  margin-top: 50px;
-  font-family: 'Futura';
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
-  text-align: center;
-}

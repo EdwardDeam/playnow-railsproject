@@ -1,47 +1,32 @@
-<%= render 'shared/banneradd' %>
-
-<div class='user_grid'>
-  <div class='bio_display'>
-  <% if @user_avatar.attached? %>
-    <div class='avatar'>
-      <%= image_tag @user_avatar, class: 'avatar' %>
-    </div>
-  <% end %>
-      <p><%= link_to 'Edit Proflie', edit_user_registration_path, class: 'custom_edit' %></p>
-  </div>
-  
-  <div class='games_display'>
+  <div class='display-container'>
+  <div class="info-container">
     <% unless @published.nil? %>
     <h1>Your Published Games</h1>
+        <hr class="game-line">
       <% @published.each do |game|  %>
-      <div class='games'>
-        <h1><%= game.title %></h1>
-        <div class='publishes_games_buttons'>
-          <div class='button_spacing'>
-          <%= link_to 'Edit', edit_game_path(game), class: 'custom_submit' %>
-          
-          <label class='custom_submit'>
-            Delete
-            <span style="display:none;">
-              <%= button_to 'Delete', game_path(game), method: 'delete' %>
-            </span>
-          </label>
-        </div>
-
-        </div>
+      <div class='pub-games'>
+        <p class="game-title"><%= game.title %></p>
+        <span> <%= link_to edit_game_path(game), class: "edit-btn" do%></span>
+                <i class="far fa-edit"></i>
+              <% end %>
+             <span> <%= button_to game_path(game), method: 'delete', class: "delete-btn" do%></span>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
       </div>
       <% end  %>
     <% end %>
 
-  <h1>Your Game Keys</h1>
+  <h1 class="top-space">Your Game Keys</h1>
+  <hr class="game-line">
     <% @games.length.times do |i| %>
-    <div class='games'>
-      <h1><%= @games.game_title(i) %></h1>
-      <h2><%= @games.game_publisher(i) %></h2>
-      <h3><%= @games.game_key(i) %></h3>
+    <div class='key-games'>
+      <span><%= @games.game_title(i) %></span>
+      <span><%= @games.game_key(i) %></span>
+
     </div>
     <% end %>
     <% if can? :create, Game %>
   <% end %>
   </div>
+</div>  
 </div>

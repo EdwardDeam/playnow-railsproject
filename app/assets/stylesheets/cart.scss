@@ -1,3 +1,82 @@
 // Place all the styles related to the Cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart-index-container {
+  display: flex;
+  justify-content: center;
+}
+.cart-line {
+  margin: 0 0 5px 0;
+  border-color: #ff2a49;
+}
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-game-title {
+  width: 40%;
+}
+.cart-game-price {
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+}
+.cart-delete-btn {
+  background-color: #ffffff;
+  border: none;
+  color: #ff2a49;
+  // padding: 5px;
+}
+.totals {
+  display: flex;
+  justify-content: space-between;
+}
+.pay-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// New Cart
+.new-cart-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.new-cart {
+  text-align: center;
+  border: 2px solid #797979;
+  padding: 10px 20px 20px 20px;
+  width: auto;
+  border-radius: 5px;
+}
+.cart_games_buttons a {
+  text-decoration: none;
+}
+.cart-back-btn {
+  background-color: #ffffff;
+  border: 2px solid #ff2a49;
+  color: #ff2a49;
+  border-radius: 5px;
+  padding: 5px;
+}
+.cart-back-btn:hover {
+  color: #ffffff;
+  background-color: #ff2a49;
+}
+.cart-go-btn {
+  background-color: #ffffff;
+  border: 2px solid #9cb946;
+  color: #9cb946;
+  border-radius: 5px;
+  padding: 5px;
+}
+.cart-go-btn:hover {
+  color: #ffffff;
+  background-color: #9cb946;
+}

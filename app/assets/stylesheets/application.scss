@@ -17,12 +17,17 @@
 @import "bootstrap";
 
 /* Import Font */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 /* Import other css components */
+@import "cart.scss";
 
 /* Any style that is common to all pages */
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+.stripe-button-el {
+  display: none !important;
 }
