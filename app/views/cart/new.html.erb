@@ -1,4 +1,12 @@
-<div class='cart_games_buttons'>
-  <%= link_to "Continue Shopping", root_path, class: 'custom_submit' %>
-  <%= link_to "Go to Cart", cart_index_path, class: 'custom_submit' %>
+<div class="new-cart-container">
+  <div class="new-cart">
+    <div class="added-game">
+      <h5><%= @game.title %> </h5>
+      <h5>Added to cart!</h5>
+    </div>
+    <div class='cart_games_buttons'>
+      <%= link_to "← Continue Shopping", root_path, class: 'cart-back-btn' %>
+      <%= link_to "Checkout →", cart_index_path, class: 'cart-go-btn' %>
+    </div>
+  </div>
 </div>
