@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+/* Import Font */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+/* Import other css components */
+
+/* Any style that is common to all pages */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
