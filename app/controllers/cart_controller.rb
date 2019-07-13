@@ -6,8 +6,8 @@ class CartController < ApplicationController
   end
 
   def new
-    game = Game.find(cart_params[:game_id])
-    CartItem.create(cart: current_user.cart, game: game)
+    @game = Game.find(cart_params[:game_id])
+    CartItem.create(cart: current_user.cart, game: @game)
   end
 
   def destroy

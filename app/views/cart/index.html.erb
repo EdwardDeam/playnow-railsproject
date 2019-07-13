@@ -1,27 +1,24 @@
-<div class='signup-container'>
-  <h1 class='registration_headings'>Cart</h1>
-  <div class='cart_box'>
-      <% @cart_items.each do |i| %>
-        <h1><div class='cart_game_title'><%= i.game.title %></div></h1>
-        <h1><div class='cart_price'><%= i.game.price_to_string %></div></h1>
-  
-  
-      <label class='custom_delete'>
-          Delete
-            <span style="display:none;">
-              <%= button_to 'Delete', cart_path(i), method: 'delete' %>
-            </span>
-        </label>
-      <% end %>
-  
+<div class="cart-index-container">
+  <div class='shopping-cart'>
+    <h1>Your Cart</h1>
+    <hr class="cart-line">
+        <% @cart_items.each do |i| %>
+          <div class='cart-item'>
+              <span class='cart-game-title'><%= i.game.title %></span>
+              <span class='cart-game-price'><p><%= i.game.price_to_string %></p></span>
+              <span> <%= button_to cart_path(i), method: 'delete', class: "cart-delete-btn" do%></span>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
 
-    <div class='price_spacing'>
-        <h1><div>Total:</div></h1>
-        
-        <div class='cart_price'><h1><u><%= @price_string %></u></h1></div>
-    </div>
 
+          </div>
+        <% end %>
+        <hr class="cart-line">
+      <div class='totals'>
+          <h3>Your Total: </h3>
+          
+          <h3 class='cart_price'><%= @price_string %></h3>
+      </div>
+      <div class="pay-btn"><%= render "shared/stripe_cart" %></div>
   </div>
-  <%= render "shared/stripe_cart", class: 'cart_submit' %>
 </div>
-

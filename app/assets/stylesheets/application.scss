@@ -20,8 +20,12 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 /* Import other css components */
+
 @import "welcome.scss";
 @import "./shared/navbar";
+
+@import "cart.scss";
+
 
 /* Any style that is common to all pages */
 * {
@@ -52,4 +56,7 @@ nav {
   border: none;
   margin-top: 15px;
   cursor: pointer;
+}
+.stripe-button-el {
+  display: none !important;
 }
