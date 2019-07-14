@@ -36,6 +36,9 @@ gem 'devise'
 # Use CanCanCan for User authentication
 gem 'cancancan'
 
+# Use Faker for generating seed data
+gem 'faker'
+
 # Fix devise signout
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
