@@ -43,6 +43,6 @@ class CartController < ApplicationController
 
   # Returns the total as a deciaml with a '$'
   def total_to_string
-    '$' + (@total / 100).to_s
+    '$' + (@total / 100.0).to_s
   end
 end
