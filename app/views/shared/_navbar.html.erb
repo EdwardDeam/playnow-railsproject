@@ -11,7 +11,7 @@
         <%= link_to 'Publish', new_game_path, :class=>"secondary" %>
       <% end %>
 
-      <label class='custom_submit'>
+      <label class='secondary'>
         Sign Out
           <span style="display:none;">
             <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>

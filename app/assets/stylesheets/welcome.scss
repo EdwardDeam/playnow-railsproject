@@ -19,6 +19,9 @@
   a {
     text-decoration: none;
   }
+  .tile_price {
+    background: #97b147;
+  }
 }
 
 .tile_row {
@@ -50,17 +53,13 @@
   border: none;
   border-radius: 3px;
   color: #fff;
-  width: 50px;
+  width: 70px;
 }
 
 .tile_genre {
   font-size: 12px;
   font-weight: 700;
   color: #787878;
-}
-
-.tile_price:hover {
-  background: #97b147;
 }
 
 .background_image {

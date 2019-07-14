@@ -22,12 +22,11 @@
             <% if user_signed_in? %>
               <%= link_to 'ADD TO CART', new_cart_path(game_id: @game.id), class: 'add_to_cart_btn' %>
               <%= render "shared/stripe_form" %>
-              <div class='add_to_cart_btn'>BUY NOW</div>
               <% end %>
 
         <% end  %>
         <% unless user_signed_in? %>
-        Login or Sign Up to purchase games
+        <h2 class="login-alert">Login or Sign Up to purchase games</h2>
         <% end %>
       </div>
     </div>  

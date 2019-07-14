@@ -57,3 +57,36 @@ nav {
 .stripe-button-el {
   display: none !important;
 }
+.add_to_cart_btn {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: #a3b147;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.add_to_cart_btn:hover {
+  background: #97b147;
+}
+
+.buy_now_btn {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: #a3b147;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
