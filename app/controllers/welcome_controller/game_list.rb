@@ -41,7 +41,7 @@ class WelcomeController < ApplicationController
       # Load every game and its publishers username
       # only load active games
       games = []
-      list = Game.includes(publisher: [:user]).select { |game| game.active == true }
+      list = Game.with_attached_images.includes(publisher: [:user]).select { |game| game.active == true }
       list.each do |game|
         games << {
           title: game.title,
