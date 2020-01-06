@@ -7,6 +7,13 @@ By [Cooper Viktor](https://github.com/CoopsCodes) and [Edward Deam](https://gith
 3. `rake db:setup` to create local database migrate and seed
 4. `rails s` to run the rails server
 5. Load http://localhost:3000/ in the browser
+## Docker
+1. Clone this repo
+2. `docker-compose build`
+3. `docker-compose run web rails db:setup`
+4. `docker-compose up`
+5. Load http://localhost:3000/ in the browser
+
 
 #### Logins
 Buyer Users
